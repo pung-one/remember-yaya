@@ -1,21 +1,47 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BlogPost({ title, date, imagesrc, article }) {
   return (
-    <>
+    <PostContainer>
       <Title>{title}</Title>
       <Date>{date}</Date>
-      <StyledImage src={imagesrc} alt={title} width={200} height={150} />
-      <Article>{article}</Article>
-    </>
+      {imagesrc && (
+        <ImageContainer>
+          <StyledImage src={imagesrc} alt={title} fill={true} />
+        </ImageContainer>
+      )}
+      <Article dangerouslySetInnerHTML={{ __html: article }} />
+    </PostContainer>
   );
 }
 
-const Title = styled.title``;
+const PostContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 10vw 0;
+  gap: 2vh;
+`;
 
-const Date = styled.span``;
+const Title = styled.h2``;
 
-const Article = styled.article``;
+const Date = styled.span`
+  opacity: 0.7;
+`;
 
-const StyledImage = styled(Image)``;
+const Article = styled.article`
+  line-height: 2.8vh;
+  a {
+    text-decoration: underline;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: 30vh;
+`;
+
+const StyledImage = styled(Image)`
+  object-fit: contain;
+`;
