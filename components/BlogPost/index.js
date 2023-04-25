@@ -20,7 +20,9 @@ export default function BlogPost({ title, date, imagesrc, article }) {
 const PostContainer = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 5vh 10vw 0;
+  border-bottom: 1px solid black;
+  padding-bottom: 10vh;
+  margin: 0 10vw 10vh;
   gap: 2vh;
 `;
 
@@ -31,7 +33,7 @@ const Date = styled.span`
 `;
 
 const Article = styled.article`
-  line-height: 2.8vh;
+  line-height: 25px;
   a {
     text-decoration: underline;
   }
@@ -39,7 +41,7 @@ const Article = styled.article`
 
 const ImageContainer = styled.div`
   position: relative;
-  height: 30vh;
+  height: 40vh;
 `;
 
 const StyledImage = styled(Image)`
