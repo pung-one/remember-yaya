@@ -1,18 +1,44 @@
 import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
 
-export default function BlogPost({ title, date, imagesrc, article }) {
+export default function BlogPost({
+  title,
+  date,
+  imagesrc,
+  article,
+  youtubeLink,
+}) {
   return (
     <PostContainer>
       <Title>{title}</Title>
       <Date>{date}</Date>
-      {imagesrc && (
-        <ImageContainer>
-          <StyledImage src={imagesrc} alt={title} fill={true} />
-        </ImageContainer>
+      {youtubeLink ? (
+        <>
+          <YoutubeContainer>
+            <StyledIframe
+              src="https://www.youtube.com/embed/WsTrfJTC9Ms"
+              allowFullScreen
+              title="The Life of Yaya Jabbi"
+            />
+          </YoutubeContainer>
+          {/* <YouTube videoId={youtubeLink} /> */}
+          <Article dangerouslySetInnerHTML={{ __html: article }} />
+          {imagesrc && (
+            <ImageContainer>
+              <StyledImage src={imagesrc} alt={title} fill={true} />
+            </ImageContainer>
+          )}
+        </>
+      ) : (
+        <>
+          {imagesrc && (
+            <ImageContainer>
+              <StyledImage src={imagesrc} alt={title} fill={true} />
+            </ImageContainer>
+          )}
+          <Article dangerouslySetInnerHTML={{ __html: article }} />
+        </>
       )}
-      <Article dangerouslySetInnerHTML={{ __html: article }} />
     </PostContainer>
   );
 }
@@ -32,6 +58,19 @@ const Date = styled.span`
   opacity: 0.7;
 `;
 
+const YoutubeContainer = styled.section`
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+`;
+
+const StyledIframe = styled.iframe`
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+`;
+
 const Article = styled.article`
   line-height: 25px;
   a {
@@ -45,5 +84,6 @@ const ImageContainer = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 0 50%;
 `;
