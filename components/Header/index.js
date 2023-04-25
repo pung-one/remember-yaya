@@ -6,7 +6,7 @@ export default function Header({ language, onToggleLanguage }) {
     <HeaderContainer>
       <Headline>Remember Yaya</Headline>
       <LanguageButton onClick={() => onToggleLanguage()}>
-        <LangSign isActive={language === "english"}>ENG</LangSign>/
+        <LangSign isActive={language === "english"}>ENG</LangSign>{" "}
         <LangSign isActive={language === "german"}>DEU</LangSign>
       </LanguageButton>
     </HeaderContainer>
@@ -18,13 +18,15 @@ const HeaderContainer = styled.header`
   display: flex;
   z-index: 2;
   border-bottom: 1px solid black;
-  background-color: white;
+  background-color: #253122;
   width: 100%;
   height: 10vh;
 `;
 
 const Headline = styled.h1`
   margin: auto 0 auto 4vw;
+  background-color: #253122;
+  color: #f3a257;
 `;
 
 const LanguageButton = styled.button`
@@ -33,7 +35,7 @@ const LanguageButton = styled.button`
   align-self: center;
   margin: auto 0 auto;
   padding: 3px;
-  background-color: white;
+  background-color: #253122;
   border: none;
   &:hover {
     cursor: pointer;
@@ -41,5 +43,7 @@ const LanguageButton = styled.button`
 `;
 
 const LangSign = styled.span`
+  background-color: #253122;
+  color: white;
   opacity: ${({ isActive }) => (isActive ? "0.5" : "1")};
 `;
