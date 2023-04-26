@@ -17,6 +17,6 @@ export default createGlobalStyle`
     font-size: 4vh;
   }
   h2 {
-    font-size: 3vh;
+    font-size: 24px;
   }
 `;

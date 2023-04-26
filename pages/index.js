@@ -6,7 +6,7 @@ export default function Home({ language }) {
   return (
     <PageContainer>
       {oldPosts?.map(
-        ({ title, date, engArticle, gerArticle, imagesrc, link }) => {
+        ({ title, date, engArticle, gerArticle, imagesrc, youtubeLink }) => {
           return (
             <BlogPost
               key={title}
@@ -14,7 +14,7 @@ export default function Home({ language }) {
               date={date}
               article={language === "english" ? engArticle : gerArticle}
               imagesrc={imagesrc}
-              link={link}
+              youtubeLink={youtubeLink}
             />
           );
         }
