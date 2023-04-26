@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function BlogPost({
   title,
@@ -8,10 +9,33 @@ export default function BlogPost({
   article,
   youtubeLink,
 }) {
+  const [viewportWidth, setViewportWidth] = useState("");
+  const [viewportHeight, setViewportHeight] = useState("");
+
+  function handleResize() {
+    setViewportWidth(window.innerWidth);
+    setViewportHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <PostContainer>
       <Title>{title}</Title>
-      <Date>{date}</Date>
+      <Date
+        showOutsideOfBox={
+          viewportWidth > 1200 && viewportHeight < viewportWidth
+        }
+      >
+        {date}
+      </Date>
       {youtubeLink ? (
         <>
           <YoutubeContainer>
@@ -44,6 +68,7 @@ export default function BlogPost({
 }
 
 const PostContainer = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
@@ -55,12 +80,17 @@ const PostContainer = styled.section`
 const Title = styled.h2``;
 
 const Date = styled.span`
+  position: ${({ showOutsideOfBox }) =>
+    showOutsideOfBox ? "absolute" : "relative"};
+  left: ${({ showOutsideOfBox }) => (showOutsideOfBox ? "-12vw" : "")};
   opacity: 0.7;
+  margin-bottom: 3vh;
 `;
 
 const YoutubeContainer = styled.section`
   position: relative;
   padding-bottom: 56.25%;
+  margin-bottom: 3vh;
   overflow: hidden;
 `;
 
@@ -73,6 +103,7 @@ const StyledIframe = styled.iframe`
 
 const Article = styled.article`
   line-height: 25px;
+  margin-bottom: 3vh;
   a {
     text-decoration: underline;
   }

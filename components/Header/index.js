@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export default function Header({ language, onToggleLanguage }) {
-  console.log(language);
   return (
     <HeaderContainer>
       <Headline>Remember Yaya</Headline>
