@@ -78,17 +78,20 @@ const PostContainer = styled.section`
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
+  background: none;
   padding-bottom: 10vh;
   margin: 0 10vw 10vh;
   gap: 2vh;
 `;
 
 const Title = styled.h2`
+  background: none;
   margin-bottom: ${({ dateIsShownOutside }) =>
     dateIsShownOutside ? "3vh" : ""};
 `;
 
 const Date = styled.span`
+  background: none;
   position: ${({ showOutsideOfBox }) =>
     showOutsideOfBox ? "absolute" : "relative"};
   left: ${({ showOutsideOfBox }) => (showOutsideOfBox ? "-12vw" : "")};
@@ -110,11 +113,12 @@ const StyledIframe = styled.iframe`
 `;
 
 const Article = styled.article`
+  background: none;
   line-height: 25px;
   margin-bottom: 3vh;
   a {
     text-decoration: underline;
-    color: #f15a30;
+    color: #00b49b;
     &:hover {
       color: white;
     }
