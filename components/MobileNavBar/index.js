@@ -44,5 +44,6 @@ const ListElement = styled.li`
 
 const StyledLink = styled(Link)`
   background-color: black;
+  font-size: 2.2vh;
   color: #00b49b;
 `;

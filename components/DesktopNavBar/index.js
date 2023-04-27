@@ -38,6 +38,7 @@ const ListElement = styled.li`
 const StyledLink = styled(Link)`
   background-color: black;
   color: #00b49b;
+  font-size: 2vh;
   &:hover {
     color: white;
   }

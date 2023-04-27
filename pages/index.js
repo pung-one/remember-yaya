@@ -25,6 +25,6 @@ export default function Home({ language }) {
 
 const PageContainer = styled.main`
   max-width: 1100px;
-  padding: 15vh 0 5vh;
+  padding: 25vh 0 5vh;
   margin: 0 auto 0 auto;
 `;
