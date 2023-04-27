@@ -14,9 +14,10 @@ export default createGlobalStyle`
     color: black;
   }
   h1 {
-    font-size: 4vh;
+    font-size: 3vh;
   }
   h2 {
     font-size: 24px;
+    color: black;
   }
 `;

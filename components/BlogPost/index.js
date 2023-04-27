@@ -28,7 +28,13 @@ export default function BlogPost({
 
   return (
     <PostContainer>
-      <Title>{title}</Title>
+      <Title
+        dateIsShownOutside={
+          viewportWidth > 1200 && viewportHeight < viewportWidth
+        }
+      >
+        {title}
+      </Title>
       <Date
         showOutsideOfBox={
           viewportWidth > 1200 && viewportHeight < viewportWidth
@@ -77,7 +83,10 @@ const PostContainer = styled.section`
   gap: 2vh;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  margin-bottom: ${({ dateIsShownOutside }) =>
+    dateIsShownOutside ? "3vh" : ""};
+`;
 
 const Date = styled.span`
   position: ${({ showOutsideOfBox }) =>
@@ -96,7 +105,6 @@ const YoutubeContainer = styled.section`
 
 const StyledIframe = styled.iframe`
   position: absolute;
-  overflow: hidden;
   width: 100%;
   height: 100%;
 `;
@@ -106,6 +114,11 @@ const Article = styled.article`
   margin-bottom: 3vh;
   a {
     text-decoration: underline;
+    color: #f15a30;
+    &:hover {
+      color: white;
+    }
+    transition: all 0.2s;
   }
 `;
 
