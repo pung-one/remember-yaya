@@ -14,7 +14,7 @@ export default createGlobalStyle`
     color: black;
   }
   h1 {
-    font-size: 3vh;
+    font-size: 15vh;
   }
   h2 {
     font-size: 24px;

@@ -40,8 +40,8 @@ export default function Header({
       </LanguageButton>
       {viewportHeight > viewportWidth && (
         <MenuButton onClick={() => onToggleNav()}>
-          <MenuButtonSymbol showNav={showNav} />
-          <CloseMenuSymbol showNav={showNav} />
+          <MenuButtonSymbol $showNav={showNav} />
+          <CloseMenuSymbol $showNav={showNav} />
         </MenuButton>
       )}
     </HeaderContainer>
@@ -66,7 +66,8 @@ const StyledLink = styled(Link)`
   background-color: black;
 `;
 
-const Headline = styled.h1`
+const Headline = styled.p`
+  font-size: 3vh;
   background-color: black;
   color: #f15a30;
 `;
@@ -112,8 +113,8 @@ const MenuButtonSymbol = styled(SlMenu)`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: ${({ showNav }) => (showNav ? "0" : "1")};
-  transform: ${({ showNav }) => (showNav ? "rotate(-90deg)" : "")};
+  opacity: ${(props) => (props.$showNav ? "0" : "1")};
+  transform: ${(props) => (props.$showNav ? "rotate(-90deg)" : "")};
   background-color: black;
   font-size: 3.5vh;
   fill: white;
@@ -124,8 +125,8 @@ const CloseMenuSymbol = styled(SlClose)`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: ${({ showNav }) => (showNav ? "1" : "0")};
-  transform: ${({ showNav }) => (showNav ? "" : "rotate(90deg)")};
+  opacity: ${(props) => (props.$showNav ? "1" : "0")};
+  transform: ${(props) => (props.$showNav ? "" : "rotate(90deg)")};
   background-color: black;
   font-size: 3.5vh;
   fill: white;
