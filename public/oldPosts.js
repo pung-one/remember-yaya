@@ -26,7 +26,7 @@ const oldPosts = [
       '"ReMapping Memories Lisboa - Hamburg: (Post)koloniale Erinnerungsorte" ist ein mehrjähriges Projekt des Goethe-Instituts Portugal mit Partnern in Lissabon und Hamburg. Es widmet sich den stein- und „mental-map“-gewordenen Spuren und Hinterlassenschaften des Kolonialismus und des antikolonialen Widerstands im öffentlichen Raum in den beiden Hafenstädten Hamburg und Lissabon. Das Projekt zeigt am Beispiel zweier Zentren des europäischen Imperialismus, welche Spuren und Einschreibungen des Kolonialen in europäischen Städten bis ins 21. Jahrhundert bestehen und will damit einen Beitrag zur Dekolonisierung des öffentlichen Raums leisten. Den ausführlichen Beitrag der Initiative in Gedenken an Yaya Jabbi lest ihr hier: <br><br> <a target="_blank" href="https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli">Re-Mapping Memories Lisboa</a>',
     engArticle:
       '"ReMapping Memories Lisboa - Hamburg: (Post)Colonial Sites of Memory" is a multi-year project of the Goethe-Institut Portugal with partners in Lisbon and Hamburg. It is dedicated to the "stone turned" traces and legacies of colonialism and anti-colonial resistance in public space in the two port cities of Hamburg and Lisbon. Using the example of two centers of European imperialism, the project shows which traces and inscriptions of the colonial exist in European cities up to the 21st century and thus aims to contribute to the decolonization of public space. Read the detailed contribution of the initiative in memory of Yaya Jabbi here: <br><br> <a target="_blank" href="https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli">Re-Mapping Memories Lisboa</a>',
-    imagesrc: "/images/revealing-street-sign.jpg",
+    imagesrc: "/images/reveal-street-sign.jpg",
     link: "https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli",
   },
   {
@@ -36,7 +36,7 @@ const oldPosts = [
       "Am Sonntag, den 18. Februar 2018 haben wir den Yaya Jabbi Circle eingeweiht. Am Morgen des 20. Februar 2018 waren sowohl das neue Straßenschild, als auch die Gedenktafel weg. Der Yaya Jabbi Circle ist ein Zeichen, dass Yaya nicht vergessen wird. Wir brauchen Gedenkorte, um den Opfern des rassistischen Systems zu gedenken. Der Kreisel ist Teil des Park Fiction. Das Park Fiction Komitee freut sich, dass wir den Gedenkort an diesem Ort verwirklichen. Wir werden Yaya nicht vergessen und wir werden auch die Umstände, unter denen er gestorben ist, nicht vergessen! Wir lassen uns diesen Ort der Erinnerung nicht nehmen! Black lives matter!",
     engArticle:
       "On Sunday, 18th February 2018 we opened the Yaya Jabbi Circle at Park Fiction. On the morning of the 20th February, the new street sign and the plaque have been removed. The Yaya Jabbi Circle is a sign that Yaya will not be forgotten. We need memorial places to remember the victims of the racist system. The roundabout is a part of Park Fiction. The Park Fiction Komitee is happy to see the memorial place for Yaya in this Circle. We will not forget about Yaya, nor will we forget about the circumstances under which he died! We will not let them take away this place of remembrance! Black lives matter! ",
-    imagesrc: "/images/street-sign.jpg",
+    imagesrc: "/images/circle-sign.jpg",
   },
 ];
 

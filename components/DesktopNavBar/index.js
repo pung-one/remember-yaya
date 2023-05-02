@@ -11,6 +11,9 @@ export default function DesktopNavBar() {
         <ListElement>
           <StyledLink href={"/about"}>About</StyledLink>
         </ListElement>
+        <ListElement>
+          <StyledLink href={"/circle"}>Yaya Jabbi Circle</StyledLink>
+        </ListElement>
       </List>
     </NavContainer>
   );
