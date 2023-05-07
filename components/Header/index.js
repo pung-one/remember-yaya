@@ -67,6 +67,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Headline = styled.p`
+  font-family: "Didot Regular";
   font-size: 3vh;
   background-color: black;
   color: #f15a30;
@@ -117,8 +118,11 @@ const MenuButtonSymbol = styled(SlMenu)`
   transform: ${(props) => (props.$showNav ? "rotate(-90deg)" : "")};
   background-color: black;
   font-size: 3.5vh;
-  fill: white;
-  transition: all 0.5s;
+  transition: all 0.3s;
+  fill: #f15a30;
+  &:hover {
+    fill: white;
+  }
 `;
 
 const CloseMenuSymbol = styled(SlClose)`
@@ -129,6 +133,9 @@ const CloseMenuSymbol = styled(SlClose)`
   transform: ${(props) => (props.$showNav ? "" : "rotate(90deg)")};
   background-color: black;
   font-size: 3.5vh;
-  fill: white;
-  transition: all 0.5s;
+  transition: all 0.3s;
+  fill: #f15a30;
+  &:hover {
+    fill: white;
+  }
 `;

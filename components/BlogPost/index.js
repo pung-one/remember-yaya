@@ -51,20 +51,25 @@ export default function BlogPost({
               title="The Life of Yaya Jabbi"
             />
           </YoutubeContainer>
-          {/* <YouTube videoId={youtubeLink} /> */}
           <Article dangerouslySetInnerHTML={{ __html: article }} />
           {imagesrc && (
-            <ImageContainer>
-              <StyledImage src={imagesrc} alt={title} fill={true} />
-            </ImageContainer>
+            <StyledImage
+              src={imagesrc}
+              alt={title}
+              width={"800"}
+              height={"600"}
+            />
           )}
         </>
       ) : (
         <>
           {imagesrc && (
-            <ImageContainer>
-              <StyledImage src={imagesrc} alt={title} fill={true} />
-            </ImageContainer>
+            <StyledImage
+              src={imagesrc}
+              alt={title}
+              width={"800"}
+              height={"600"}
+            />
           )}
           <Article dangerouslySetInnerHTML={{ __html: article }} />
         </>
@@ -78,10 +83,13 @@ const PostContainer = styled.section`
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
-  background: none;
   padding-bottom: 10vh;
   margin: 0 10vw 10vh;
-  gap: 2vh;
+  gap: 3vh;
+  background: none;
+  > * {
+    background: none;
+  }
 `;
 
 const Title = styled.h2`
@@ -92,17 +100,16 @@ const Title = styled.h2`
 
 const Date = styled.span`
   background: none;
+  font-size: 14px;
   position: ${({ showOutsideOfBox }) =>
     showOutsideOfBox ? "absolute" : "relative"};
   left: ${({ showOutsideOfBox }) => (showOutsideOfBox ? "-12vw" : "")};
   opacity: 0.7;
-  margin-bottom: 3vh;
 `;
 
 const YoutubeContainer = styled.section`
   position: relative;
   padding-bottom: 56.25%;
-  margin-bottom: 3vh;
   overflow: hidden;
 `;
 
@@ -113,9 +120,10 @@ const StyledIframe = styled.iframe`
 `;
 
 const Article = styled.article`
-  background: none;
-  line-height: 25px;
-  margin-bottom: 3vh;
+  > * {
+    background: none;
+  }
+  line-height: 32px;
   a {
     text-decoration: underline;
     color: #00b49b;
@@ -129,9 +137,13 @@ const Article = styled.article`
 const ImageContainer = styled.div`
   position: relative;
   height: 40vh;
+  margin-bottom: 4vh;
 `;
 
 const StyledImage = styled(Image)`
-  object-fit: cover;
-  object-position: 0 50%;
+  object-fit: contain;
+  background: none;
+  height: 35vh;
+  width: 100%;
+  object-position: 50% 50%;
 `;
