@@ -1,45 +1,80 @@
 import BlogPost from "@/components/BlogPost";
 import oldPosts from "../public/oldPosts";
 import styled from "styled-components";
+import { css } from "styled-components";
+import { useState, useEffect } from "react";
 
 export default function Home({ language }) {
+  const [viewportWidth, setViewportWidth] = useState("");
+  const [viewportHeight, setViewportHeight] = useState("");
+
+  function handleResize() {
+    setViewportWidth(window.innerWidth);
+    setViewportHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
   return (
-    <PageContainer>
-      <HeroSection>
-        <PageTitle>Blog</PageTitle>
-      </HeroSection>
-      {oldPosts?.map(
-        ({ title, date, engArticle, gerArticle, imagesrc, youtubeLink }) => {
-          return (
-            <BlogPost
-              key={title}
-              title={title}
-              date={date}
-              article={language === "english" ? engArticle : gerArticle}
-              imagesrc={imagesrc}
-              youtubeLink={youtubeLink}
-            />
-          );
-        }
-      )}
-    </PageContainer>
+    <>
+      <PageTitle isOnMobile={viewportHeight > viewportWidth}>Chronic</PageTitle>
+      <PageContainer isOnMobile={viewportHeight > viewportWidth}>
+        {oldPosts?.map(
+          ({
+            engTitle,
+            gerTitle,
+            engDate,
+            gerDate,
+            engArticle,
+            gerArticle,
+            imagesrc,
+            youtubeLink,
+          }) => {
+            return (
+              <BlogPost
+                key={engTitle}
+                title={language === "english" ? engTitle : gerTitle}
+                date={language === "english" ? engDate : gerDate}
+                article={language === "english" ? engArticle : gerArticle}
+                imagesrc={imagesrc}
+                youtubeLink={youtubeLink}
+              />
+            );
+          }
+        )}
+      </PageContainer>
+    </>
   );
 }
 
-const HeroSection = styled.section`
-  margin: 10vh 0 3vh;
-  height: 20vh;
-`;
-
 const PageTitle = styled.h1`
-  position: relative;
   z-index: 0;
-  color: #f15a30;
+  display: flex;
+  justify-content: center;
   font-weight: lighter;
-  font-style: italic;
+  color: #a2b0ad;
+  ${({ isOnMobile }) =>
+    isOnMobile
+      ? css`
+          position: relative;
+          font-size: 10vh;
+          margin: 15vh 0 0;
+        `
+      : css`
+          position: fixed;
+          font-size: 10vw;
+          right: 0;
+          margin: 13vh 4vw 0 0;
+        `}
 `;
 
 const PageContainer = styled.main`
   max-width: 1100px;
-  margin: 0 auto 0 auto;
+  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "30vh auto 0 auto")};
 `;

@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+@font-face {
+  font-family: "Didot Regular";
+  src: local("Didot Regular"),
+    url("./fonts/Didot Regular.ttf") format("truetype");
+}
+
   *,
   *::before,
   *::after {
@@ -14,10 +20,12 @@ export default createGlobalStyle`
     color: black;
   }
   h1 {
-    font-size: 15vh;
+    font-family: "Didot Regular";
+    font-size: 14vh;
   }
   h2 {
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 400;
     color: black;
   }
 `;
