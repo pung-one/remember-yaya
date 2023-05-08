@@ -46,7 +46,7 @@ export default function About({ language }) {
                 his friends seen as being in danger of committing suicide.
                 <br />
                 <br />
-                You can watch a movie about Yaya's life here.
+                You can watch a movie about Yaya&apos;s life here.
               </>
             ) : (
               <>
