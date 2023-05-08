@@ -6,7 +6,7 @@ export default function DesktopNavBar() {
     <NavContainer>
       <List>
         <ListElement>
-          <StyledLink href={"/"}>Home</StyledLink>
+          <StyledLink href={"/"}>Chronic</StyledLink>
         </ListElement>
         <ListElement>
           <StyledLink href={"/about"}>About</StyledLink>

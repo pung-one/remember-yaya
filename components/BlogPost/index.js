@@ -74,6 +74,7 @@ export default function BlogPost({
           <Article dangerouslySetInnerHTML={{ __html: article }} />
         </>
       )}
+      <FinishLine />
     </PostContainer>
   );
 }
@@ -82,14 +83,22 @@ const PostContainer = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
   padding-bottom: 10vh;
   margin: 0 10vw 10vh;
-  gap: 3vh;
+  gap: 30px;
   background: none;
   > * {
     background: none;
   }
+`;
+
+const FinishLine = styled.div`
+  position: absolute;
+  left: -50vw;
+  bottom: 0;
+  border-bottom: 1px solid black;
+  height: 1px;
+  width: 150vw;
 `;
 
 const Title = styled.h2`
@@ -109,6 +118,7 @@ const Date = styled.span`
 
 const YoutubeContainer = styled.section`
   position: relative;
+  margin: 0 2vw;
   padding-bottom: 56.25%;
   overflow: hidden;
 `;
@@ -124,6 +134,7 @@ const Article = styled.article`
     background: none;
   }
   line-height: 32px;
+  margin: 0 2vw;
   a {
     text-decoration: underline;
     color: #00b49b;
@@ -132,12 +143,6 @@ const Article = styled.article`
     }
     transition: all 0.2s;
   }
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  height: 40vh;
-  margin-bottom: 4vh;
 `;
 
 const StyledImage = styled(Image)`

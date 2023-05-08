@@ -43,7 +43,7 @@ export default function Circle({ language }) {
                   Committee decided to dedicate this place to Yaya Jabbi as a
                   memorial site.
                 </TextContainer2>
-                <ImageContainer1 isOnMobile={viewportHeight > viewportWidth}>
+                <ImageContainer1>
                   <StyledImage
                     src={"/images/circle-sign.jpg"}
                     alt={"banner"}
@@ -89,7 +89,7 @@ export default function Circle({ language }) {
                   Fiction Committee hat entschieden, diesen Ort Yaya Jabbi zu
                   widmen als einen Ort der Erinnerung.
                 </TextContainer2>
-                <ImageContainer1 isOnMobile={viewportHeight > viewportWidth}>
+                <ImageContainer1>
                   <StyledImage
                     src={"/images/circle-sign.jpg"}
                     alt={"banner"}
@@ -171,17 +171,14 @@ const TextContainer1 = styled.p`
 const Article = styled.article`
   position: relative;
   background: none;
-
-  line-height: 25px;
-  padding: 0 10vw 5vh;
+  line-height: 32px;
+  padding: 0 12vw 5vh;
 `;
 
 const TextImageBlock1 = styled.section`
   position: relative;
   display: flex;
-  height: 35vh;
   background: none;
-
   overflow: hidden;
   margin: 4vw 0 4vw;
   ${({ isOnMobile }) =>
@@ -196,16 +193,15 @@ const TextImageBlock1 = styled.section`
 
 const TextContainer2 = styled.p`
   padding-right: ${({ isOnMobile }) => (isOnMobile ? "0" : "3vw")};
-  overflow: scroll;
   background: none;
-
+  line-height: 32px;
   height: 100%;
   width: ${({ isOnMobile }) => (isOnMobile ? "100%" : "70%")};
 `;
 
 const StyledImage = styled(Image)`
   object-fit: cover;
-  object-position: 0 0;
+  object-position: 50% 0;
   height: 100%;
   width: 100%;
 `;
@@ -213,11 +209,11 @@ const StyledImage = styled(Image)`
 const ImageContainer1 = styled.div`
   position: relative;
   width: 100%;
-  height: ${({ isOnMobile }) => (isOnMobile ? "100%" : "100%")};
 `;
 
 const TextContainer3 = styled.p`
   margin: 4vw 0 4vw;
+  line-height: 32px;
   background: none;
 `;
 

@@ -21,6 +21,7 @@ export default createGlobalStyle`
   }
   h1 {
     font-family: "Didot Regular";
+    opacity: 0.7;
     font-size: 14vh;
   }
   h2 {
