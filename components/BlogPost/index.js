@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function BlogPost({
+  slug,
+  isDetailPost,
   title,
   date,
   imagesrc,
@@ -27,21 +30,34 @@ export default function BlogPost({
   }, []);
 
   return (
-    <PostContainer>
-      <Title
-        dateIsShownOutside={
-          viewportWidth > 1200 && viewportHeight < viewportWidth
-        }
-      >
-        {title}
-      </Title>
-      <Date
-        showOutsideOfBox={
-          viewportWidth > 1200 && viewportHeight < viewportWidth
-        }
-      >
-        {date}
-      </Date>
+    <PostContainer isOnMobile={viewportHeight > viewportWidth}>
+      {isDetailPost ? (
+        <Title
+          dateIsShownOutside={
+            viewportWidth > 1200 && viewportHeight < viewportWidth
+          }
+        >
+          {title}
+        </Title>
+      ) : (
+        <LinkTitle
+          href={`/${slug}`}
+          $dateIsShownOutside={
+            viewportWidth > 1200 && viewportHeight < viewportWidth
+          }
+        >
+          {title}
+        </LinkTitle>
+      )}
+      {!isDetailPost && (
+        <Date
+          showOutsideOfBox={
+            viewportWidth > 1200 && viewportHeight < viewportWidth
+          }
+        >
+          {date}
+        </Date>
+      )}
       {youtubeLink ? (
         <>
           <YoutubeContainer>
@@ -51,9 +67,13 @@ export default function BlogPost({
               title="The Life of Yaya Jabbi"
             />
           </YoutubeContainer>
-          <Article dangerouslySetInnerHTML={{ __html: article }} />
+          <Article
+            isOnMobile={viewportHeight > viewportWidth}
+            dangerouslySetInnerHTML={{ __html: article }}
+          />
           {imagesrc && (
             <StyledImage
+              $isOnMobile={viewportHeight > viewportWidth}
               src={imagesrc}
               alt={title}
               width={"800"}
@@ -65,16 +85,20 @@ export default function BlogPost({
         <>
           {imagesrc && (
             <StyledImage
+              $isOnMobile={viewportHeight > viewportWidth}
               src={imagesrc}
               alt={title}
               width={"800"}
               height={"600"}
             />
           )}
-          <Article dangerouslySetInnerHTML={{ __html: article }} />
+          <Article
+            isOnMobile={viewportHeight > viewportWidth}
+            dangerouslySetInnerHTML={{ __html: article }}
+          />
         </>
       )}
-      <FinishLine />
+      {!isDetailPost && <FinishLine />}
     </PostContainer>
   );
 }
@@ -84,8 +108,9 @@ const PostContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding-bottom: 10vh;
-  margin: 0 10vw 10vh;
-  gap: 30px;
+  margin: ${({ isOnMobile }) =>
+    isOnMobile ? "0 10vw 10vh" : "0 20vw 30px 5vw"};
+  gap: 40px;
   background: none;
   > * {
     background: none;
@@ -99,6 +124,14 @@ const FinishLine = styled.div`
   border-bottom: 1px solid black;
   height: 1px;
   width: 150vw;
+`;
+
+const LinkTitle = styled(Link)`
+  background: none;
+  text-decoration: underline;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: ${(props) => (props.$dateIsShownOutside ? "3vh" : "")};
 `;
 
 const Title = styled.h2`
@@ -118,7 +151,7 @@ const Date = styled.span`
 
 const YoutubeContainer = styled.section`
   position: relative;
-  margin: 0 2vw;
+  margin: 0 5%;
   padding-bottom: 56.25%;
   overflow: hidden;
 `;
@@ -134,7 +167,8 @@ const Article = styled.article`
     background: none;
   }
   line-height: 32px;
-  margin: 0 2vw;
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  height: 100%;
   a {
     text-decoration: underline;
     color: #00b49b;
@@ -148,7 +182,8 @@ const Article = styled.article`
 const StyledImage = styled(Image)`
   object-fit: contain;
   background: none;
-  height: 35vh;
-  width: 100%;
-  object-position: 50% 50%;
+  height: 100%;
+  width: ${(props) => (props.$isOnMobile ? "100%" : "90%")};
+  align-self: center;
+  object-position: 50% 0;
 `;

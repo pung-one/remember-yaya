@@ -27,6 +27,5 @@ export default createGlobalStyle`
   h2 {
     font-size: 32px;
     font-weight: 400;
-    color: black;
   }
 `;
