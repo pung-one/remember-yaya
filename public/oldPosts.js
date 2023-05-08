@@ -1,5 +1,6 @@
 const oldPosts = [
   {
+    slug: "the-life-of-yaya-jabbi",
     gerTitle: "The Life of Yaya Jabbi",
     engTitle: "The Life of Yaya Jabbi",
     gerDate: "19. Februar 2023",
@@ -12,6 +13,7 @@ const oldPosts = [
     youtubeLink: "WsTrfJTC9Ms",
   },
   {
+    slug: "remapping-lisboa",
     gerTitle:
       "ReMapping Memories Lisboa - Hamburg: (Post)koloniale Erinnerungsorte",
     engTitle:
@@ -26,17 +28,19 @@ const oldPosts = [
     link: "https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli",
   },
   {
+    slug: "we-are-here-2022",
     gerTitle: "Wir sind hier - Ein digitales Kartografieprojekt",
     engTitle: "We are here - A Digital Cartography Project",
     gerDate: "Februar 2022",
     engDate: "February 2022",
     gerArticle:
-      '"Wir Sind Hier" ist ein digitales Kartografieprojekt, das in enger Zusammenarbeit mit Initiativen und Einzelpersonen entstanden ist, die sich gegen Rassismus und Antisemitismus in ganz Deutschland engagieren. Es lädt die Nutzerinnen und Nutzer dazu ein, sich vorzustellen, wie Gedenken - von den Straßen der Städte bis zu den Denkmälern - heute als aktive Form des Widerstands und der Veränderung aussehen könnte und sollte. <br> In Städten wie Berlin, Hanau, Halle, Hamburg, Mölln, Essen, Erlangen und München erhebt das Projekt über die Stimmen und Forderungen von Familien, Initiativen und Betroffenen von rechtem Terror und Polizeigewalt, die allzu oft in den Hintergrund gedrängt werden, Anspruch auf Erinnerungsräume. <br><br> "Wir Sind Hier" bietet einen digitalen Raum für individuelles und kollektives Trauern und Widerstand. Das Projekt behauptet Wir Sind Hier - die Namen derer, die in unseren Städten bleiben müssen, die hier sind und niemals vergessen werden dürfen, und es behauptet Wir Sind Hier - die Stimmen derer, die sich aktiv an sie erinnern, die hier sind, kämpfen und nicht länger zum Schweigen gebracht werden wollen.<br><br><a target="_blank" href="https://www.kunstverein.de/digitalprojekte/talya-feldman">Wir sind hier - Ein digitales Kartografieprojekt</a>',
+      '"Wir Sind Hier" ist ein digitales Kartografieprojekt der Künstlerin <a target="_blank" href="https://www.talyafeldman.net">Talya Feldmann</a>. Es ist in enger Zusammenarbeit mit Initiativen und Einzelpersonen entstanden, die sich gegen Rassismus und Antisemitismus in ganz Deutschland engagieren. Es lädt die Nutzerinnen und Nutzer dazu ein, sich vorzustellen, wie Gedenken - von den Straßen der Städte bis zu den Denkmälern - heute als aktive Form des Widerstands und der Veränderung aussehen könnte und sollte. <br> In Städten wie Berlin, Hanau, Halle, Hamburg, Mölln, Essen, Erlangen und München erhebt das Projekt über die Stimmen und Forderungen von Familien, Initiativen und Betroffenen von rechtem Terror und Polizeigewalt, die allzu oft in den Hintergrund gedrängt werden, Anspruch auf Erinnerungsräume. <br><br> "Wir Sind Hier" bietet einen digitalen Raum für individuelles und kollektives Trauern und Widerstand. Das Projekt behauptet Wir Sind Hier - die Namen derer, die in unseren Städten bleiben müssen, die hier sind und niemals vergessen werden dürfen, und es behauptet Wir Sind Hier - die Stimmen derer, die sich aktiv an sie erinnern, die hier sind, kämpfen und nicht länger zum Schweigen gebracht werden wollen.<br><br><a target="_blank" href="https://www.kunstverein.de/digitalprojekte/talya-feldman">Wir sind hier - Ein digitales Kartografieprojekt</a>',
     engArticle:
-      '"Wir Sind Hier" (We Are Here), a digital cartography project generated in close collaboration with initiatives and individuals combating racism and antisemitism across Germany, invites users to imagine how remembrance, from city streets to monuments, could and should look like today as an active form of resistance and change. <br> In cities like Berlin, Hanau, Halle, Hamburg, Mölln, Essen, Erlangen and Munich, the project claims spaces of remembrance through the voices and demands of families, initiatives, and those affected by right-wing terror and police brutality who are all too often pushed to the background. <br><br> "Wir Sind Hier" offers a digital space for individual and collective mourning and resistance. It claims We Are Here — the names of those who must remain in our cities, who are here and never to be forgotten, and it claims We Are Here — the voices of those who actively remember them — who are here, fighting, no longer to be silenced. <br><br><a target="_blank" href="https://www.kunstverein.de/digitalprojekte/talya-feldman">Wir sind hier - Ein digitales Kartografieprojekt</a>',
+      '"Wir Sind Hier" (We Are Here), a digital cartography project by the artist <a target="_blank" href="https://www.talyafeldman.net">Talya Feldmann</a>. It was generated in close collaboration with initiatives and individuals combating racism and antisemitism across Germany, invites users to imagine how remembrance, from city streets to monuments, could and should look like today as an active form of resistance and change. <br> In cities like Berlin, Hanau, Halle, Hamburg, Mölln, Essen, Erlangen and Munich, the project claims spaces of remembrance through the voices and demands of families, initiatives, and those affected by right-wing terror and police brutality who are all too often pushed to the background. <br><br> "Wir Sind Hier" offers a digital space for individual and collective mourning and resistance. It claims We Are Here — the names of those who must remain in our cities, who are here and never to be forgotten, and it claims We Are Here — the voices of those who actively remember them — who are here, fighting, no longer to be silenced. <br><br><a target="_blank" href="https://www.kunstverein.de/digitalprojekte/talya-feldman">Wir sind hier - Ein digitales Kartografieprojekt</a>',
     imagesrc: "",
   },
   {
+    slug: "circle-2018",
     gerTitle: "Yaya Jabbi Circle",
     engTitle: "Yaya Jabbi Circle",
     gerDate: "18. Februar 2018",
@@ -48,6 +52,7 @@ const oldPosts = [
     imagesrc: "/images/circle-sign.jpg",
   },
   {
+    slug: "manifestation-2018",
     gerTitle: "Remember Yaya Jabbi!",
     engTitle: "Remember Yaya Jabbi!",
     gerDate: "Februar 2018",
@@ -59,6 +64,7 @@ const oldPosts = [
     imagesrc: "/images/poster2018.jpg",
   },
   {
+    slug: "conference-2017",
     gerTitle: "Erinnerungskonferenz 'Remember to Act'",
     engTitle: "'Remember to Act' Conference in Remembrance",
     gerDate: "18. Februar 2017",
@@ -69,14 +75,15 @@ const oldPosts = [
       "On the 18th of February we had a Conference in Remembrance of Yaya Jabbi, to which we invited different initiatives, that organise in remembrance of somebody who was killed for racist reasons, against racist police controls and affected people. In different working phases, we mainly spoke about the topics: <br><br><strong> - Remembrance of people who were killed for racist reasons, or inside the racist system</strong> <br><br><strong> - Stop racist police controls</strong> <br><br> - Furthermore we watched <strong>'Les coups de leurs privilèges'</strong> (2016, 50 min, Frz with german subtitles, <a href='https://www.cinemeteque.com/film/les-coups-de-leurs-privileges/' target='_blank'>https://www.cinemeteque.com/film/les-coups-de-leurs-privileges/</a>) a movie about self organisation of affected people of racist police violence in France. Regisseur Sabrina Thawra was there to discuss with us.",
   },
   {
+    slug: "demo-2016",
     gerTitle: "Demonstration",
     engTitle: "Manifestation",
-    deuDate: "Juni 2016",
+    gerDate: "Juni 2016",
     engDate: "June 2016",
     gerArticle:
-      "Im Juni 2016 gab es eine sehr starke Demonstration, die von der Initiative in Gedenken an Jaja Diabi (zu dem Zeitpunkt noch ein Vernetzungstreffen) organisiert wurde.",
+      "Im Juni 2016 gab es eine sehr starke Demonstration, die von der Initiative in Gedenken an Yaya Jabbi (zu dem Zeitpunkt noch ein Vernetzungstreffen) organisiert wurde.",
     engArticle:
-      "There was a very strong demonstration organised by the Initiative in Remembrance of Jaja Diabi (at the time a networking group) in June 2016.",
+      "There was a very strong demonstration organised by the Initiative in Remembrance of Yaya Jabbi (at the time a networking group) in June 2016.",
     imagesrc: "/images/Banner_2.jpg",
   },
 ];

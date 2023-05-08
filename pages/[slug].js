@@ -3,10 +3,14 @@ import oldPosts from "../public/oldPosts";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-export default function Home({ language }) {
+export default function PostDetail({ language }) {
+  const router = useRouter();
+  const { slug } = router.query;
   const [viewportWidth, setViewportWidth] = useState("");
   const [viewportHeight, setViewportHeight] = useState("");
+  const [currentPost, setCurrentPost] = useState({});
 
   function handleResize() {
     setViewportWidth(window.innerWidth);
@@ -21,35 +25,38 @@ export default function Home({ language }) {
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
+
+  useEffect(() => {
+    setCurrentPost(oldPosts.find((post) => post.slug === slug));
+  }, [oldPosts, slug]);
+
+  if (!currentPost) return <h1>Loading...</h1>;
+
+  const {
+    engTitle,
+    gerTitle,
+    engDate,
+    gerDate,
+    engArticle,
+    gerArticle,
+    imagesrc,
+    youtubeLink,
+  } = currentPost;
+
   return (
     <>
-      <PageTitle isOnMobile={viewportHeight > viewportWidth}>Chronic</PageTitle>
+      <PageTitle isOnMobile={viewportHeight > viewportWidth}>
+        {language === "english" ? engDate : gerDate}
+      </PageTitle>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
-        {oldPosts?.map(
-          ({
-            slug,
-            engTitle,
-            gerTitle,
-            engDate,
-            gerDate,
-            engArticle,
-            gerArticle,
-            imagesrc,
-            youtubeLink,
-          }) => {
-            return (
-              <BlogPost
-                slug={slug}
-                key={engTitle}
-                title={language === "english" ? engTitle : gerTitle}
-                date={language === "english" ? engDate : gerDate}
-                article={language === "english" ? engArticle : gerArticle}
-                imagesrc={imagesrc}
-                youtubeLink={youtubeLink}
-              />
-            );
-          }
-        )}
+        <BlogPost
+          isDetailPost={true}
+          key={engTitle}
+          title={language === "english" ? engTitle : gerTitle}
+          article={language === "english" ? engArticle : gerArticle}
+          imagesrc={imagesrc}
+          youtubeLink={youtubeLink}
+        />
       </PageContainer>
     </>
   );
@@ -65,12 +72,13 @@ const PageTitle = styled.h1`
     isOnMobile
       ? css`
           position: relative;
+          text-align: center;
           font-size: 10vh;
-          margin: 15vh 0 0;
+          margin: 15vh 10vw 0;
         `
       : css`
           position: fixed;
-          font-size: 10vw;
+          font-size: 6vw;
           right: 0;
           margin: 13vh 4vw 0 0;
         `}
