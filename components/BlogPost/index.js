@@ -173,6 +173,7 @@ const Article = styled.article`
     background: none;
   }
   line-height: 32px;
+  font-size: 16px;
   margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
   height: 100%;
   a {

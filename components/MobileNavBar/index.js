@@ -27,7 +27,7 @@ const NavContainer = styled.nav`
   padding-top: 5vh;
   z-index: 2;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.9;
   background-color: black;
   right: ${({ showNav }) => (showNav ? "0" : "-50vw")};
   transition: all 0.5s;
