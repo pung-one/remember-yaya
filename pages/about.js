@@ -38,8 +38,8 @@ export default function About({ language }) {
             {language === "english" ? (
               <>
                 Yaya was arrested by the police on the 14th of January 2016 at
-                Hamburger Berg. He was accused of owning 1,65 grams of Cannabis.
-                Four days later he was brought to remand prison Hahnöfersand.
+                Hamburger Berg. Four days later he was brought to remand prison
+                Hahnöfersand.
                 <br />
                 <br />
                 In the night from the 18th to the 19th of February 2016 Yaya
@@ -60,8 +60,7 @@ export default function About({ language }) {
             ) : (
               <>
                 Yaya wurde am 14. Januar 2016 am Hamburger Berg von der Polizei
-                festgenommen. Ihm wurde vorgeworfen, 1,65 Gramm Cannabis zu
-                besitzen. Vier Tage später wurde er in die Untersuchungshaft
+                festgenommen. Vier Tage später wurde er in die Untersuchungshaft
                 nach Hahnöfersand verlegt.
                 <br />
                 <br />
