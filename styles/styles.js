@@ -1,11 +1,46 @@
 import { createGlobalStyle } from "styled-components";
+import { css } from "styled-components";
 
 export default createGlobalStyle`
-@font-face {
-  font-family: "Didot Regular";
-  src: local("Didot Regular"),
-    url("./fonts/Didot Regular.ttf") format("truetype");
-}
+  @font-face {
+  font-family: "NotoSerif";
+  src: url("./fonts/NotoSerif-Regular.ttf");
+  font-weight: normal;
+  }
+
+  @font-face {
+  font-family: "NotoSerif";
+  src: url("./fonts/NotoSerif-Bold.ttf");
+  font-weight: bold;
+  }
+
+  @font-face {
+  font-family: "Oxygen";
+  src: url("./fonts/Oxygen-Light.ttf");
+  font-weight: light;
+  }
+
+  @font-face {
+  font-family: "Oxygen";
+  src: url("./fonts/Oxygen-Regular.ttf");
+  font-weight: normal;
+  }
+
+  @font-face {
+  font-family: "Oxygen";
+  src: url("./fonts/Oxygen-Bold.ttf");
+  font-weight: bold;
+  }
+
+  :root{
+    --primary-background: #b6bfc1;
+    --primary-accent: #929a9c;
+    --accent: #f15a30;
+    --secondary: #fbe6a0;
+
+    --headline-font: Oxygen;
+    --content-font: NotoSerif;
+  }
 
   *,
   *::before,
@@ -13,19 +48,22 @@ export default createGlobalStyle`
     box-sizing: border-box;
     text-decoration: none;
     margin: 0;
-    font-family: system-ui;
+    font-family: var(--content-font);
     font-size: 16px;
     padding: 0;
-    background-color: #b6bfc1;
+    background-color: var(--primary-background);
     color: black;
   }
   h1 {
-    font-family: "Didot Regular";
-    opacity: 0.7;
-    font-size: 14vh;
+    font-family: var(--headline-font);
+    font-weight: bold;
+    color: var(--primary-accent);
+    opacity: 0.4;
+    font-size: 8.5vw;
   }
   h2 {
+    font-family: var(--headline-font);
+    font-weight: normal;
     font-size: 32px;
-    font-weight: 400;
   }
 `;

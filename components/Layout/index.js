@@ -49,6 +49,7 @@ export default function Layout({ children, language, onToggleLanguage }) {
 }
 
 const LayoutContainer = styled.section`
+  background: none;
   position: relative;
   height: 100%;
   overflow-x: hidden;

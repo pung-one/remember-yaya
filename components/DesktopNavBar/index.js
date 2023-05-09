@@ -14,6 +14,9 @@ export default function DesktopNavBar() {
         <ListElement>
           <StyledLink href={"/circle"}>Yaya Jabbi Circle</StyledLink>
         </ListElement>
+        <ListElement>
+          <StyledLink href={"/contact"}>Contact</StyledLink>
+        </ListElement>
       </List>
     </NavContainer>
   );
@@ -40,7 +43,8 @@ const ListElement = styled.li`
 
 const StyledLink = styled(Link)`
   background-color: black;
-  color: #00b49b;
+  color: var(--secondary);
+  font-family: var(--headline-font);
   font-size: 2vh;
   &:hover {
     color: white;

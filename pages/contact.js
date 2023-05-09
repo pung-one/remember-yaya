@@ -1,10 +1,8 @@
-import BlogPost from "@/components/BlogPost";
-import oldPosts from "../public/oldPosts";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { useState, useEffect } from "react";
 
-export default function Home({ language }) {
+export default function Contact({ language }) {
   const [viewportWidth, setViewportWidth] = useState("");
   const [viewportHeight, setViewportHeight] = useState("");
 
@@ -23,39 +21,27 @@ export default function Home({ language }) {
   }, []);
   return (
     <>
-      <PageTitle isOnMobile={viewportHeight > viewportWidth}>Chronic</PageTitle>
+      <PageTitle isOnMobile={viewportHeight > viewportWidth}>Contact</PageTitle>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
-        {oldPosts?.map(
-          ({
-            slug,
-            engTitle,
-            gerTitle,
-            engDate,
-            gerDate,
-            engArticle,
-            gerArticle,
-            imagesrc,
-            youtubeLink,
-          }) => {
-            return (
-              <BlogPost
-                slug={slug}
-                key={engTitle}
-                title={language === "english" ? engTitle : gerTitle}
-                date={language === "english" ? engDate : gerDate}
-                article={language === "english" ? engArticle : gerArticle}
-                imagesrc={imagesrc}
-                youtubeLink={youtubeLink}
-              />
-            );
-          }
-        )}
+        <Article isOnMobile={viewportHeight > viewportWidth}>
+          <Title>
+            {language === "english"
+              ? "Contact us via Email:"
+              : "Kontaktiere uns per Email"}
+          </Title>
+          <TextContainer>
+            <a href="mailto:rememberjajadiabi@riseup.net">
+              rememberjajadiabi@riseup.net
+            </a>
+          </TextContainer>
+        </Article>
       </PageContainer>
     </>
   );
 }
 
 const PageTitle = styled.h1`
+  background: none;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -75,6 +61,40 @@ const PageTitle = styled.h1`
 `;
 
 const PageContainer = styled.main`
+  background: none;
+  position: relative;
   max-width: 1100px;
   margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "25vh auto 0 auto")};
+`;
+
+const Article = styled.article`
+  background: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 20vw 30px 5vw")};
+`;
+
+const Title = styled.h2`
+  background: none;
+  margin-bottom: 10px;
+`;
+
+const TextContainer = styled.p`
+  background: none;
+  > * {
+    background: none;
+  }
+  line-height: 32px;
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin-bottom: 45px;
+  a {
+    text-decoration: underline;
+    color: var(--secondary);
+    &:hover {
+      color: white;
+    }
+    transition: all 0.2s;
+  }
 `;

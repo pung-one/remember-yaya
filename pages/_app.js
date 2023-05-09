@@ -1,7 +1,6 @@
 import GlobalStyle from "@/styles/styles.js";
 import Layout from "@/components/Layout";
 import { useState } from "react";
-import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const [language, setLanguage] = useState("english");

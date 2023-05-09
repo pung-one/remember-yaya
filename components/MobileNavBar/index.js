@@ -13,6 +13,9 @@ export default function MobileNavBar({ showNav }) {
         <ListElement>
           <StyledLink href={"/circle"}>Yaya Jabbi Circle</StyledLink>
         </ListElement>
+        <ListElement>
+          <StyledLink href={"/contact"}>Contact</StyledLink>
+        </ListElement>
       </List>
     </NavContainer>
   );
@@ -37,7 +40,7 @@ const List = styled.ul`
   align-items: center;
   list-style: none;
   width: 50vw;
-  gap: 3vh;
+  gap: 4vh;
   background-color: black;
 `;
 
@@ -48,5 +51,6 @@ const ListElement = styled.li`
 const StyledLink = styled(Link)`
   background-color: black;
   font-size: 2.2vh;
-  color: #00b49b;
+  font-family: var(--headline-font);
+  color: var(--secondary);
 `;

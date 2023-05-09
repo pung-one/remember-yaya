@@ -67,10 +67,10 @@ const StyledLink = styled(Link)`
 `;
 
 const Headline = styled.p`
-  font-family: "Didot Regular";
+  font-family: var(--headline-font);
   font-size: 3vh;
   background-color: black;
-  color: #f15a30;
+  color: var(--accent);
 `;
 
 const LanguageButton = styled.button`
@@ -81,9 +81,10 @@ const LanguageButton = styled.button`
 `;
 
 const LangSign = styled.span`
+  font-family: var(--headline-font);
   font-size: 2vh;
   background-color: black;
-  color: #00b49b;
+  color: var(--secondary);
   opacity: ${({ isActive }) => (isActive ? "0.5" : "1")};
   ${({ isActive }) =>
     !isActive
@@ -119,10 +120,7 @@ const MenuButtonSymbol = styled(SlMenu)`
   background-color: black;
   font-size: 3.5vh;
   transition: all 0.3s;
-  fill: #f15a30;
-  &:hover {
-    fill: white;
-  }
+  fill: var(--accent);
 `;
 
 const CloseMenuSymbol = styled(SlClose)`
@@ -134,8 +132,5 @@ const CloseMenuSymbol = styled(SlClose)`
   background-color: black;
   font-size: 3.5vh;
   transition: all 0.3s;
-  fill: #f15a30;
-  &:hover {
-    fill: white;
-  }
+  fill: var(--accent);
 `;
