@@ -80,17 +80,15 @@ const PageTitle = styled.h1`
   display: flex;
   justify-content: center;
   font-weight: lighter;
-  color: #a2b0ad;
   ${({ isOnMobile }) =>
     isOnMobile
       ? css`
           position: relative;
-          font-size: 10vh;
+          font-size: 7vh;
           margin: 15vh 0 0;
         `
       : css`
           position: fixed;
-          font-size: 10vw;
           right: 0;
           margin: 13vh 4vw 0 0;
         `}

@@ -60,7 +60,7 @@ export default function BlogPost({
       )}
       {youtubeLink ? (
         <>
-          <YoutubeContainer>
+          <YoutubeContainer isOnMobile={viewportHeight > viewportWidth}>
             <StyledIframe
               src="https://www.youtube.com/embed/WsTrfJTC9Ms"
               allowFullScreen
@@ -109,7 +109,7 @@ const PostContainer = styled.section`
   flex-direction: column;
   padding-bottom: 10vh;
   margin: ${({ isOnMobile }) =>
-    isOnMobile ? "0 10vw 10vh" : "0 20vw 30px 5vw"};
+    isOnMobile ? "0 10vw 10vh" : "0 20vw 20vh 5vw"};
   gap: 40px;
   background: none;
   > * {
@@ -127,11 +127,17 @@ const FinishLine = styled.div`
 `;
 
 const LinkTitle = styled(Link)`
+  width: fit-content;
   background: none;
   text-decoration: underline;
+  font-family: var(--headline-font);
   font-size: 32px;
-  font-weight: 400;
+  font-weight: lighter;
   margin-bottom: ${(props) => (props.$dateIsShownOutside ? "3vh" : "")};
+  &:hover {
+    color: white;
+  }
+  transition: all 0.2s;
 `;
 
 const Title = styled.h2`
@@ -151,7 +157,7 @@ const Date = styled.span`
 
 const YoutubeContainer = styled.section`
   position: relative;
-  margin: 0 5%;
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
   padding-bottom: 56.25%;
   overflow: hidden;
 `;
@@ -171,9 +177,9 @@ const Article = styled.article`
   height: 100%;
   a {
     text-decoration: underline;
-    color: #00b49b;
+    color: var(--secondary);
     &:hover {
-      color: white;
+      color: black;
     }
     transition: all 0.2s;
   }

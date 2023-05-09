@@ -115,17 +115,15 @@ const PageTitle = styled.h1`
   display: flex;
   justify-content: center;
   font-weight: lighter;
-  color: #a2b0ad;
   ${({ isOnMobile }) =>
     isOnMobile
       ? css`
           position: relative;
-          font-size: 15vw;
+          font-size: 7vh;
           margin: 15vh 0 0;
         `
       : css`
           position: fixed;
-          font-size: 10vw;
           right: 0;
           margin: 13vh 4vw 0 0;
         `}
@@ -170,9 +168,9 @@ const StyledImage1 = styled(Image)`
 
 const StyledLink = styled(Link)`
   text-decoration: underline;
-  color: #00b49b;
+  color: var(--secondary);
   &:hover {
-    color: white;
+    color: black;
   }
   transition: all 0.2s;
 `;
