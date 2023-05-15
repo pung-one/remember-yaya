@@ -151,8 +151,7 @@ const Title = styled.h2`
 
 const TextContainer1 = styled.p`
   background: none;
-  line-height: 32px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0 0 30px" : "0 5% 30px")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0 0 30px" : "0 10% 30px")};
 `;
 
 const StyledImage1 = styled(Image)`
@@ -161,7 +160,8 @@ const StyledImage1 = styled(Image)`
   object-position: 50% 0;
   height: 100%;
   float: right;
-  margin: ${(props) => (props.$isOnMobile ? "0 0 5%" : "0 0 10px 20px")};
+  box-shadow: 0 0 3vh grey;
+  margin: ${(props) => (props.$isOnMobile ? "0 0 15%" : "0 0 10px 20px")};
   width: ${(props) => (props.$isOnMobile ? "100%" : "40%")};
 `;
 
@@ -169,7 +169,7 @@ const StyledLink = styled(Link)`
   text-decoration: underline;
   color: var(--secondary);
   &:hover {
-    color: black;
+    color: var(--accent);
   }
   transition: all 0.2s;
 `;
@@ -179,8 +179,7 @@ const TextContainer2 = styled.p`
   > * {
     background: none;
   }
-  line-height: 32px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
   margin-bottom: 45px;
 `;
 
@@ -189,5 +188,6 @@ const StyledImage2 = styled(Image)`
   background: none;
   object-position: 50% 0;
   width: 100%;
+  box-shadow: 0 0 3vh grey;
   height: ${(props) => (props.$isOnMobile ? "35vh" : "100%")};
 `;

@@ -23,14 +23,15 @@ export default function MobileNavBar({ showNav }) {
 
 const NavContainer = styled.nav`
   position: fixed;
+  display: flex;
   top: 10vh;
   padding-top: 5vh;
   z-index: 2;
   height: 100%;
-  opacity: 0.9;
+  opacity: 0.85;
   background-color: black;
-  right: ${({ showNav }) => (showNav ? "0" : "-50vw")};
-  transition: all 0.5s;
+  right: ${({ showNav }) => (showNav ? "0" : "-100vw")};
+  transition: all 0.5s ease-in-out;
 `;
 
 const List = styled.ul`
@@ -39,7 +40,7 @@ const List = styled.ul`
   flex-direction: column;
   align-items: center;
   list-style: none;
-  width: 50vw;
+  width: 62vw;
   gap: 4vh;
   background-color: black;
 `;

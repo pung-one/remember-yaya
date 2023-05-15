@@ -36,7 +36,7 @@ export default createGlobalStyle`
     --primary-background: #b6bfc1;
     --primary-accent: #929a9c;
     --accent: #f15a30;
-    --secondary: #fbe6a0;
+    --secondary: white;
 
     --headline-font: Oxygen;
     --content-font: NotoSerif;
@@ -49,7 +49,7 @@ export default createGlobalStyle`
     text-decoration: none;
     margin: 0;
     font-family: var(--content-font);
-    font-size: 16px;
+    font-size: 18px;
     padding: 0;
     background-color: var(--primary-background);
     color: black;
@@ -65,5 +65,8 @@ export default createGlobalStyle`
     font-family: var(--headline-font);
     font-weight: normal;
     font-size: 32px;
+  }
+  p {
+    line-height: 1.8;
   }
 `;

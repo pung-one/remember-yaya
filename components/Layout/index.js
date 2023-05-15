@@ -42,7 +42,12 @@ export default function Layout({ children, language, onToggleLanguage }) {
         onToggleNav={handleToggleNav}
         showNav={showNav}
       />
-      {viewportHeight > viewportWidth && <MobileNavBar showNav={showNav} />}
+      {viewportHeight > viewportWidth && (
+        <>
+          {showNav && <CloseOnClickArea onClick={() => setShowNav(!showNav)} />}
+          <MobileNavBar showNav={showNav} />
+        </>
+      )}
       {children}
     </LayoutContainer>
   );
@@ -53,4 +58,13 @@ const LayoutContainer = styled.section`
   position: relative;
   height: 100%;
   overflow-x: hidden;
+`;
+
+const CloseOnClickArea = styled.section`
+  position: absolute;
+  top: 10vh;
+  width: 38vw;
+  height: 90vh;
+  z-index: 1;
+  background: none;
 `;

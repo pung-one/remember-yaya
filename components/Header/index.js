@@ -91,7 +91,7 @@ const LangSign = styled.span`
       ? css`
           &:hover {
             cursor: pointer;
-            color: white;
+            color: var(--accent);
           }
         `
       : ""}
