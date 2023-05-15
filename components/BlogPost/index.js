@@ -135,7 +135,7 @@ const LinkTitle = styled(Link)`
   font-weight: lighter;
   margin-bottom: ${(props) => (props.$dateIsShownOutside ? "3vh" : "")};
   &:hover {
-    color: white;
+    color: var(--accent);
   }
   transition: all 0.2s;
 `;
@@ -157,9 +157,10 @@ const Date = styled.span`
 
 const YoutubeContainer = styled.section`
   position: relative;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
   padding-bottom: 56.25%;
   overflow: hidden;
+  box-shadow: 0 0 3vh grey;
 `;
 
 const StyledIframe = styled.iframe`
@@ -172,15 +173,14 @@ const Article = styled.article`
   > * {
     background: none;
   }
-  line-height: 32px;
-  font-size: 16px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
   height: 100%;
+  line-height: 1.8;
   a {
     text-decoration: underline;
     color: var(--secondary);
     &:hover {
-      color: black;
+      color: var(--accent);
     }
     transition: all 0.2s;
   }
@@ -190,7 +190,8 @@ const StyledImage = styled(Image)`
   object-fit: contain;
   background: none;
   height: 100%;
-  width: ${(props) => (props.$isOnMobile ? "100%" : "90%")};
+  width: ${(props) => (props.$isOnMobile ? "100%" : "80%")};
   align-self: center;
   object-position: 50% 0;
+  box-shadow: 0 0 3vh grey;
 `;

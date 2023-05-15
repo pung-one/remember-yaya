@@ -29,7 +29,7 @@ export default function Contact({ language }) {
               ? "Contact us via Email:"
               : "Kontaktiere uns per Email"}
           </Title>
-          <TextContainer>
+          <TextContainer isOnMobile={viewportHeight > viewportWidth}>
             <a href="mailto:rememberjajadiabi@riseup.net">
               rememberjajadiabi@riseup.net
             </a>
@@ -86,14 +86,13 @@ const TextContainer = styled.p`
   > * {
     background: none;
   }
-  line-height: 32px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
   margin-bottom: 45px;
   a {
     text-decoration: underline;
     color: var(--secondary);
     &:hover {
-      color: white;
+      color: var(--accent);
     }
     transition: all 0.2s;
   }

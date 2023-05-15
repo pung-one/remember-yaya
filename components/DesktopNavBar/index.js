@@ -42,12 +42,29 @@ const ListElement = styled.li`
 `;
 
 const StyledLink = styled(Link)`
+  position: relative;
   background-color: black;
   color: var(--secondary);
   font-family: var(--headline-font);
   font-size: 2vh;
   &:hover {
-    color: white;
+    color: var(--accent);
   }
   transition: all 0.2s;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 `;

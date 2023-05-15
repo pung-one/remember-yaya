@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { css } from "styled-components";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Circle({ language }) {
   const [viewportWidth, setViewportWidth] = useState("");
@@ -27,13 +28,43 @@ export default function Circle({ language }) {
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
         <Article isOnMobile={viewportHeight > viewportWidth}>
           <Title>Yaya Jabbi Circle</Title>
+
           <TextContainer1 isOnMobile={viewportHeight > viewportWidth}>
-            {language === "english"
-              ? "The Yaya Jabbi Circle is a roundabout in St. Pauli, Hamburg, which was named after Yaya Jabbi on February 18, 2018."
-              : "Der Yaya Jabbi Circle ist ein Kreisel in St. Pauli, Hamburg, der am 18. Februar 2018 nach Yaya Jabbi benannt wurde."}
+            {language === "english" ? (
+              <>
+                The{" "}
+                <StyledLink
+                  href="https://goo.gl/maps/mmQBQ4AJGNBruoWk6"
+                  target="_blank"
+                >
+                  Yaya Jabbi Circle
+                </StyledLink>{" "}
+                is a roundabout in St. Pauli, Hamburg, which was named after
+                Yaya Jabbi on February 18, 2018.
+              </>
+            ) : (
+              <>
+                Der{" "}
+                <StyledLink
+                  href="https://goo.gl/maps/mmQBQ4AJGNBruoWk6"
+                  target="_blank"
+                >
+                  Yaya Jabbi Circle
+                </StyledLink>{" "}
+                ist ein Kreisel in St. Pauli, Hamburg, der am 18. Februar 2018
+                nach Yaya Jabbi benannt wurde.
+              </>
+            )}
           </TextContainer1>
+          <StyledImage1
+            $isOnMobile={viewportHeight > viewportWidth}
+            src={"/images/circle-map.png"}
+            alt={"banner"}
+            width={"1280"}
+            height={"785"}
+          />
           <TextContainer2 isOnMobile={viewportHeight > viewportWidth}>
-            <StyledImage
+            <StyledImage2
               $isOnMobile={viewportHeight > viewportWidth}
               src={"/images/circle-sign.jpg"}
               alt={"banner"}
@@ -45,7 +76,7 @@ export default function Circle({ language }) {
               : "Der Kreisel gehört zum Gezi Park Fiction. In der Mitte des Kreisels sollte ein Räuberinnen-Brunnen entstehen. Da dies nie passiert ist, hatte der Kreisel bis zu seiner Benennung keinen Namen. Die Initiative in Gedenken an Yaya Jabbi und das Park Fiction Committee hat entschieden, diesen Ort Yaya Jabbi zu widmen als einen Ort der Erinnerung."}
           </TextContainer2>
 
-          <StyledImage2
+          <StyledImage3
             src={"/images/circle-plakette.jpg"}
             alt={"banner"}
             width={"1200"}
@@ -57,7 +88,7 @@ export default function Circle({ language }) {
               ? "On the 18th of February 2018 a street sign and a plaque with informationen about Yaya were put up by those groups at a manifestation. Two days later, both the street sign and the plaque have been removed by the city of Hamburg."
               : "Am 18. Februar 2018 wurden ein Straßenschild und eine Informationstafel von diesen Gruppen installiert, bei einer Gedenk-Kundgebung. Zwei Tage später wurden sowohl das Straßenschild, als auch die Informationstafel von der Stadt Hamburg entfernt."}
           </TextContainer3>
-          <StyledImage3
+          <StyledImage4
             $isOnMobile={viewportHeight > viewportWidth}
             src={"/images/circle-2023.jpg"}
             alt={"banner"}
@@ -107,7 +138,7 @@ const Article = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
   margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 20vw 30px 5vw")};
 `;
 
@@ -118,48 +149,67 @@ const Title = styled.h2`
 
 const TextContainer1 = styled.p`
   background: none;
-  line-height: 32px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  color: var(--secondary);
+  &:hover {
+    color: var(--accent);
+  }
+  transition: all 0.2s;
+`;
+
+const StyledImage1 = styled(Image)`
+  object-fit: contain;
+  background: none;
+  align-self: center;
+  object-position: 50% 0;
+  height: 100%;
+  box-shadow: 0 0 3vh grey;
+  width: ${(props) => (props.$isOnMobile ? "100%" : "80%")};
 `;
 
 const TextContainer2 = styled.p`
   background: none;
-  line-height: 32px;
   height: 100%;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
 `;
 
-const StyledImage = styled(Image)`
+const StyledImage2 = styled(Image)`
   object-fit: contain;
   background: none;
   object-position: 50% 0;
   height: 100%;
   float: right;
+  box-shadow: 0 0 3vh grey;
+
   margin: ${(props) => (props.$isOnMobile ? "0 0 30px" : "0 0 10px 20px")};
   width: ${(props) => (props.$isOnMobile ? "100%" : "60%")};
 `;
 
 const TextContainer3 = styled.p`
-  line-height: 32px;
   background: none;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
 `;
 
-const StyledImage2 = styled(Image)`
+const StyledImage3 = styled(Image)`
   object-fit: contain;
   height: 100%;
   align-self: center;
-
+  box-shadow: 0 0 3vh grey;
   ${(props) =>
     !props.$isOnMobile
       ? css`
-          width: 90%;
+          width: 80%;
           &:hover {
             cursor: pointer;
-            border: 2px solid white;
+            border: 1px solid white;
+            box-shadow: none;
           }
           &:active {
-            transform: scale(1.8);
+            transform: scale(2);
           }
           transition: all 0.2s;
         `
@@ -168,15 +218,16 @@ const StyledImage2 = styled(Image)`
         `}
 `;
 
-const StyledImage3 = styled(Image)`
+const StyledImage4 = styled(Image)`
   object-fit: contain;
   background: none;
   align-self: center;
   object-position: 50% 0;
   height: 100%;
-  width: ${(props) => (props.$isOnMobile ? "100%" : "90%")};
+  box-shadow: 0 0 3vh grey;
+  width: ${(props) => (props.$isOnMobile ? "100%" : "80%")};
 `;
 
 const Caption = styled.p`
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 5%")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
 `;
