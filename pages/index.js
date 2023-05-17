@@ -35,6 +35,7 @@ export default function Home({ language }) {
             engArticle,
             gerArticle,
             imagesrc,
+            imageAlt,
             youtubeLink,
           }) => {
             return (
@@ -45,6 +46,7 @@ export default function Home({ language }) {
                 date={language === "english" ? engDate : gerDate}
                 article={language === "english" ? engArticle : gerArticle}
                 imagesrc={imagesrc}
+                imageAlt={imageAlt}
                 youtubeLink={youtubeLink}
               />
             );

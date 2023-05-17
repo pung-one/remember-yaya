@@ -31,7 +31,7 @@ export default function About({ language }) {
             <StyledImage1
               $isOnMobile={viewportHeight > viewportWidth}
               src={"/images/Yaya_Jabbi.jpg"}
-              alt={"banner"}
+              alt={"A photo of Yaya Jabbi smiling, with a phone in his hand"}
               width={"720"}
               height={"960"}
             />
@@ -54,8 +54,11 @@ export default function About({ language }) {
                 his friends seen as being in danger of committing suicide.
                 <br />
                 <br />
-                You can watch a movie about Yaya&apos;s life{" "}
-                <StyledLink href={"/the-life-of-yaya-jabbi"}>here</StyledLink>.
+                Here you can watch a movie about the{" "}
+                <StyledLink href={"/the-life-of-yaya-jabbi"}>
+                  Life of Yaya Jabbi
+                </StyledLink>
+                .
               </>
             ) : (
               <>
@@ -79,10 +82,11 @@ export default function About({ language }) {
                 Freunde sahen ihn in Gefahr, Suizid zu begehen.
                 <br />
                 <br />
+                Hier kannst du einen{" "}
                 <StyledLink href={"/the-life-of-yaya-jabbi"}>
-                  Hier
+                  Film über Yayas Leben
                 </StyledLink>{" "}
-                kannst du einen Film über Yayas Leben schauen.
+                schauen.
               </>
             )}
           </TextContainer1>
@@ -100,7 +104,9 @@ export default function About({ language }) {
         <StyledImage2
           $isOnMobile={viewportHeight > viewportWidth}
           src={"/images/Banner_2.jpg"}
-          alt={"banner"}
+          alt={
+            "Three front banners hold by people at a protest march. Left one says 'Freedom of Movement', second one 'in Gedenken an Jaja Diabi, stoppt die rassistischen Konktrollen! in remembrance of Jaja Diabi, stop the racist police controls! en mémoire de Jaja Diabi, s'arrête les contrôles racistes', third one 'solidarity for everyone' "
+          }
           width={"959"}
           height={"367"}
         />
