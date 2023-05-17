@@ -34,12 +34,18 @@ export default function Header({
         <Headline>Remember Yaya</Headline>
       </StyledLink>
       {viewportHeight < viewportWidth && <DesktopNavBar />}
-      <LanguageButton onClick={() => onToggleLanguage()}>
+      <LanguageButton
+        aria-label="switch between english and german language"
+        onClick={() => onToggleLanguage()}
+      >
         <LangSign isActive={language === "english"}>ENG</LangSign>{" "}
         <LangSign isActive={language === "german"}>DEU</LangSign>
       </LanguageButton>
       {viewportHeight > viewportWidth && (
-        <MenuButton onClick={() => onToggleNav()}>
+        <MenuButton
+          aria-label="open and close menu"
+          onClick={() => onToggleNav()}
+        >
           <MenuButtonSymbol $showNav={showNav} />
           <CloseMenuSymbol $showNav={showNav} />
         </MenuButton>

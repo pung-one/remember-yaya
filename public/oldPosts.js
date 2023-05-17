@@ -10,6 +10,8 @@ const oldPosts = [
     engArticle:
       "On February 19th, 2016, Yaya Jabbi was found dead in his cell at the Hahnöfersand remand prison. The sudden death of Yaya as a result of the states „fight against alleged drug dealers“ shocked many people in St. Pauli, including relatives, friends, and neighbors. But who was Yaya Jabbi as a person, beyond the crimes he was accused of? Where did he grow up, and what stages in his all too short life where important for his friends and family? <br><br> Our initiative together with Yayas relatives has collected photos, which were turned into a motion graphic by graphic artist <a target=”_blank” href='https://www.instagram.com/bee.whitney/'>Whitney Bursch</a> and filmmaker <a target=”_blank” href='http://www.selengia.de/'>Timo Selengia</a>. <br><br> After this year's commemoration event, on February 18th, 2023 we screened the film publicly for the first time. Afterwards there was a conversation with the makers of the film and Yaya's brother.",
     imagesrc: "/images/circle-2023.jpg",
+    imageAlt:
+      "The Yaya Jabbi Circle on February 19, 2023. Two stones in the foreground with Yayas name written on them. Protesters in the background, with a banner 'Racism Kills'",
     youtubeLink: "WsTrfJTC9Ms",
   },
   {
@@ -25,6 +27,8 @@ const oldPosts = [
     engArticle:
       '"ReMapping Memories Lisboa - Hamburg: (Post)Colonial Sites of Memory" is a multi-year project of the Goethe-Institut Portugal with partners in Lisbon and Hamburg. It is dedicated to the "stone turned" traces and legacies of colonialism and anti-colonial resistance in public space in the two port cities of Hamburg and Lisbon. Using the example of two centers of European imperialism, the project shows which traces and inscriptions of the colonial exist in European cities up to the 21st century and thus aims to contribute to the decolonization of public space. Read the detailed contribution of the initiative in memory of Yaya Jabbi here: <br><br> <a target="_blank" href="https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli">Re-Mapping Memories Lisboa</a>',
     imagesrc: "/images/reveal-street-sign.jpg",
+    imageAlt:
+      "Person is reavealing a street-sign which says 'Yaya Jabbi Circle'. Protesters and harbour-cranes in the background.",
     link: "https://www.re-mapping.eu/de/erinnerungsorte/yaya-jabbi-circle-in-st-pauli",
   },
   {
@@ -50,6 +54,8 @@ const oldPosts = [
     engArticle:
       "On Sunday, 18th February 2018 we opened the Yaya Jabbi Circle at Park Fiction. On the morning of the 20th February, the new street sign and the plaque have been removed. The Yaya Jabbi Circle is a sign that Yaya will not be forgotten. We need memorial places to remember the victims of the racist system. The roundabout is a part of Park Fiction. The Park Fiction Komitee is happy to see the memorial place for Yaya in this Circle. We will not forget about Yaya, nor will we forget about the circumstances under which he died! We will not let them take away this place of remembrance! Black lives matter! ",
     imagesrc: "/images/circle-sign.jpg",
+    imageAlt:
+      "Close up photo of the 'Yaya Jabbi Circle'-street sign on a sunny day. Park Fiction in the background",
   },
   {
     slug: "manifestation-2018",
@@ -62,6 +68,8 @@ const oldPosts = [
     engArticle:
       "Yaya Jabbi was arrested by the police on the 14 January 2016 at Hamburger Berg. He was accused of being in possession of 1.65 grams of cannabis. Four days later he was brought to Hahnöfersand prison. In the night from the 18  19 February. Yaya died in his cell. According to the judicial authority he committed suicide. However, the judicial authority had previously determined there was no danger of Yaya committing suicide. Yaya's family and friends are left behind without justice, without truth. One day before the annual day of Yaya's death, we want to break through this silence and express our grief, our anger and remember Yaya, as well as other victims of this racist system and racist violence. Flowers are welcome. <br><br><strong>Stop the racist police controls! - Shut down the 'Task Force'!</strong> <br><br><strong>Stop war on migrants!</strong> <br><br><strong>Freedom of movement is a human right!</strong>",
     imagesrc: "/images/poster2018.jpg",
+    imageAlt:
+      "Poster inviting to the remembrance-manifestation on February 18, 2018, 2-4pm",
   },
   {
     slug: "conference-2017",
@@ -85,6 +93,8 @@ const oldPosts = [
     engArticle:
       "There was a very strong demonstration organised by the Initiative in Remembrance of Yaya Jabbi (at the time a networking group) in June 2016.",
     imagesrc: "/images/Banner_2.jpg",
+    imageAlt:
+      "Three front banners hold by people at a protest march. Left one says 'Freedom of Movement', second one 'in Gedenken an Jaja Diabi, stoppt die rassistischen Konktrollen! in remembrance of Jaja Diabi, stop the racist police controls! en mémoire de Jaja Diabi, s'arrête les contrôles racistes', third one 'solidarity for everyone' ",
   },
 ];
 

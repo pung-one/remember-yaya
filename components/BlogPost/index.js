@@ -9,6 +9,7 @@ export default function BlogPost({
   title,
   date,
   imagesrc,
+  imageAlt,
   article,
   youtubeLink,
 }) {
@@ -75,7 +76,7 @@ export default function BlogPost({
             <StyledImage
               $isOnMobile={viewportHeight > viewportWidth}
               src={imagesrc}
-              alt={title}
+              alt={imageAlt}
               width={"800"}
               height={"600"}
             />
@@ -87,7 +88,7 @@ export default function BlogPost({
             <StyledImage
               $isOnMobile={viewportHeight > viewportWidth}
               src={imagesrc}
-              alt={title}
+              alt={imageAlt}
               width={"800"}
               height={"600"}
             />
@@ -165,6 +166,7 @@ const YoutubeContainer = styled.section`
 
 const StyledIframe = styled.iframe`
   position: absolute;
+  border: none;
   width: 100%;
   height: 100%;
 `;

@@ -1,35 +1,39 @@
 import { createGlobalStyle } from "styled-components";
-import { css } from "styled-components";
 
 export default createGlobalStyle`
   @font-face {
   font-family: "NotoSerif";
   src: url("./fonts/NotoSerif-Regular.ttf");
   font-weight: normal;
+  font-display: swap;
   }
 
   @font-face {
   font-family: "NotoSerif";
   src: url("./fonts/NotoSerif-Bold.ttf");
   font-weight: bold;
+  font-display: swap;
   }
 
   @font-face {
   font-family: "Oxygen";
   src: url("./fonts/Oxygen-Light.ttf");
   font-weight: light;
+  font-display: swap;
   }
 
   @font-face {
   font-family: "Oxygen";
   src: url("./fonts/Oxygen-Regular.ttf");
   font-weight: normal;
+  font-display: swap;
   }
 
   @font-face {
   font-family: "Oxygen";
   src: url("./fonts/Oxygen-Bold.ttf");
   font-weight: bold;
+  font-display: swap;
   }
 
   :root{
@@ -37,9 +41,10 @@ export default createGlobalStyle`
     --primary-accent: #929a9c;
     --accent: #f15a30;
     --secondary: white;
-
     --headline-font: Oxygen;
     --content-font: NotoSerif;
+
+    font-size: 18px;
   }
 
   *,
@@ -49,7 +54,7 @@ export default createGlobalStyle`
     text-decoration: none;
     margin: 0;
     font-family: var(--content-font);
-    font-size: 18px;
+    
     padding: 0;
     background-color: var(--primary-background);
     color: black;

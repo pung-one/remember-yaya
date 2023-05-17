@@ -5,16 +5,24 @@ export default function MobileNavBar({ showNav }) {
     <NavContainer showNav={showNav}>
       <List>
         <ListElement>
-          <StyledLink href={"/"}>Chronic</StyledLink>
+          <StyledLink aria-label="got to chronic-page" href={"/"}>
+            Chronic
+          </StyledLink>
         </ListElement>
         <ListElement>
-          <StyledLink href={"/about"}>About</StyledLink>
+          <StyledLink aria-label="got to about-page" href={"/about"}>
+            About
+          </StyledLink>
         </ListElement>
         <ListElement>
-          <StyledLink href={"/circle"}>Yaya Jabbi Circle</StyledLink>
+          <StyledLink aria-label="got to circle-page" href={"/circle"}>
+            Yaya Jabbi Circle
+          </StyledLink>
         </ListElement>
         <ListElement>
-          <StyledLink href={"/contact"}>Contact</StyledLink>
+          <StyledLink aria-label="got to contact-page" href={"/contact"}>
+            Contact
+          </StyledLink>
         </ListElement>
       </List>
     </NavContainer>
