@@ -3,10 +3,12 @@ import oldPosts from "../public/oldPosts";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { useState, useEffect } from "react";
+import Timeline from "@/components/Timeline";
 
 export default function Home({ language }) {
   const [viewportWidth, setViewportWidth] = useState("");
   const [viewportHeight, setViewportHeight] = useState("");
+  const [timeLineDates, setTimeLineDates] = useState([]);
 
   function handleResize() {
     setViewportWidth(window.innerWidth);
@@ -21,9 +23,26 @@ export default function Home({ language }) {
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
+
+  useEffect(() => {
+    setTimeLineDates(
+      oldPosts.map((post) => {
+        if (language === "english") {
+          return { date: post.engDate, slug: post.slug };
+        }
+        return { date: post.gerDate, slug: post.slug };
+      })
+    );
+  }, [oldPosts, language]);
+
   return (
     <>
-      <PageTitle isOnMobile={viewportHeight > viewportWidth}>Chronic</PageTitle>
+      <TitleTimelineContainer isOnMobile={viewportHeight > viewportWidth}>
+        <PageTitle>Chronic</PageTitle>
+        {viewportHeight < viewportWidth && (
+          <Timeline timeLineDates={timeLineDates} />
+        )}
+      </TitleTimelineContainer>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
         {oldPosts?.map(
           ({
@@ -57,26 +76,34 @@ export default function Home({ language }) {
   );
 }
 
-const PageTitle = styled.h1`
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  font-weight: lighter;
+const TitleTimelineContainer = styled.aside`
   ${({ isOnMobile }) =>
     isOnMobile
       ? css`
           position: relative;
-          font-size: 7vh;
           margin: 15vh 0 0;
+          > h1 {
+            font-size: 7vh;
+          }
         `
       : css`
           position: fixed;
+          display: flex;
+          flex-direction: column;
+          height: 87vh;
           right: 0;
           margin: 13vh 4vw 0 0;
         `}
 `;
 
+const PageTitle = styled.h1`
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: lighter;
+`;
+
 const PageContainer = styled.main`
   max-width: 1100px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "25vh auto 0 auto")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "10vh auto 0 auto")};
 `;

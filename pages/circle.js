@@ -100,8 +100,8 @@ export default function Circle({ language }) {
               alt={
                 "The Yaya Jabbi Circle on February 19, 2023. Two stones in the foreground with Yayas name written on them. Protesters in the background, with a banner 'Racism Kills'"
               }
-              width={"800"}
-              height={"600"}
+              width={"768"}
+              height={"576"}
             />
             <Caption>
               {language === "english"
@@ -228,20 +228,23 @@ const StyledImage3 = styled(Image)`
 `;
 
 const ImageContainer = styled.section`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: ${({ isOnMobile }) => (isOnMobile ? "0" : "0 10%")};
 `;
 
 const StyledImage4 = styled(Image)`
   object-fit: contain;
   background: none;
-  align-self: center;
   object-position: 50% 0;
-  height: 100%;
   box-shadow: 0 0 3vh grey;
   width: 100%;
+  height: 100%;
 `;
 
 const Caption = styled.p`
-  margin-top: 5px;
+  margin-top: 10px;
+  background: none;
   font-size: 0.8rem;
 `;

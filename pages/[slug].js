@@ -40,6 +40,7 @@ export default function PostDetail({ language }) {
     engArticle,
     gerArticle,
     imagesrc,
+    imageAlt,
     youtubeLink,
   } = currentPost;
 
@@ -50,6 +51,7 @@ export default function PostDetail({ language }) {
       </PageTitle>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
         <BlogPost
+          imageAlt={imageAlt}
           isDetailPost={true}
           key={engTitle}
           title={language === "english" ? engTitle : gerTitle}
@@ -84,5 +86,5 @@ const PageTitle = styled.h1`
 
 const PageContainer = styled.main`
   max-width: 1100px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "25vh auto 0 auto")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "10vh auto 0 auto")};
 `;
