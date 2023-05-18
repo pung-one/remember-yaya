@@ -31,7 +31,7 @@ export default function BlogPost({
   }, []);
 
   return (
-    <PostContainer isOnMobile={viewportHeight > viewportWidth}>
+    <PostContainer id={slug} isOnMobile={viewportHeight > viewportWidth}>
       {isDetailPost ? (
         <Title
           dateIsShownOutside={
@@ -99,7 +99,6 @@ export default function BlogPost({
           />
         </>
       )}
-      {!isDetailPost && <FinishLine />}
     </PostContainer>
   );
 }
@@ -108,23 +107,14 @@ const PostContainer = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: 10vh;
+  padding: ${({ isOnMobile }) => (isOnMobile ? "0 0 10vh" : "15vh 0 0")};
   margin: ${({ isOnMobile }) =>
-    isOnMobile ? "0 10vw 10vh" : "0 20vw 20vh 5vw"};
+    isOnMobile ? "0 10vw 10vh" : "0 20vw 10vh 5vw"};
   gap: 40px;
   background: none;
   > * {
     background: none;
   }
-`;
-
-const FinishLine = styled.div`
-  position: absolute;
-  left: -50vw;
-  bottom: 0;
-  border-bottom: 1px solid black;
-  height: 1px;
-  width: 150vw;
 `;
 
 const LinkTitle = styled(Link)`

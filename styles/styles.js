@@ -63,8 +63,8 @@ export default createGlobalStyle`
     font-family: var(--headline-font);
     font-weight: bold;
     color: var(--primary-accent);
-    opacity: 0.4;
-    font-size: 8.5vw;
+    opacity: 0.6;
+    font-size: 6.5vw;
   }
   h2 {
     font-family: var(--headline-font);
