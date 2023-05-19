@@ -4,7 +4,12 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import MobileNavBar from "../MobileNavBar";
 
-export default function Layout({ children, language, onToggleLanguage }) {
+export default function Layout({
+  children,
+  language,
+  onToggleLanguage,
+  showHeader,
+}) {
   const [showNav, setShowNav] = useState(false);
   const [viewportWidth, setViewportWidth] = useState("");
   const [viewportHeight, setViewportHeight] = useState("");
@@ -37,6 +42,7 @@ export default function Layout({ children, language, onToggleLanguage }) {
   return (
     <LayoutContainer>
       <Header
+        showHeader={showHeader}
         language={language}
         onToggleLanguage={onToggleLanguage}
         onToggleNav={handleToggleNav}
