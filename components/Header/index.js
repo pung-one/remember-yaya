@@ -34,22 +34,24 @@ export default function Header({
         <Headline>Remember Yaya</Headline>
       </StyledLink>
       {viewportHeight < viewportWidth && <DesktopNavBar />}
-      <LanguageButton
-        aria-label="switch between english and german language"
-        onClick={() => onToggleLanguage()}
-      >
-        <LangSign isActive={language === "english"}>ENG</LangSign>{" "}
-        <LangSign isActive={language === "german"}>DEU</LangSign>
-      </LanguageButton>
-      {viewportHeight > viewportWidth && (
-        <MenuButton
-          aria-label="open and close menu"
-          onClick={() => onToggleNav()}
+      <ToggleButtonContainer>
+        <LanguageButton
+          aria-label="switch between english and german language"
+          onClick={() => onToggleLanguage()}
         >
-          <MenuButtonSymbol $showNav={showNav} />
-          <CloseMenuSymbol $showNav={showNav} />
-        </MenuButton>
-      )}
+          <LangSign isActive={language === "english"}>ENG</LangSign>{" "}
+          <LangSign isActive={language === "german"}>DEU</LangSign>
+        </LanguageButton>
+        {viewportHeight > viewportWidth && (
+          <MenuButton
+            aria-label="open and close menu"
+            onClick={() => onToggleNav()}
+          >
+            <MenuButtonSymbol $showNav={showNav} />
+            <CloseMenuSymbol $showNav={showNav} />
+          </MenuButton>
+        )}
+      </ToggleButtonContainer>
     </HeaderContainer>
   );
 }
@@ -57,7 +59,7 @@ export default function Header({
 const HeaderContainer = styled.header`
   position: fixed;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   z-index: 2;
   border-bottom: 1px solid black;
@@ -79,9 +81,18 @@ const Headline = styled.p`
   color: var(--accent);
 `;
 
+const ToggleButtonContainer = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5vw;
+  right: 4vw;
+  background-color: black;
+`;
+
 const LanguageButton = styled.button`
   padding: 3px;
-  margin-right: 5vw;
   background-color: black;
   border: none;
 `;
@@ -109,7 +120,6 @@ const MenuButton = styled.button`
   overflow: hidden;
   width: 3.5vh;
   height: 3.5vh;
-  margin-right: 5vw;
   background: none;
   border: none;
   &:hover {
