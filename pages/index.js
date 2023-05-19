@@ -5,7 +5,7 @@ import { css } from "styled-components";
 import { useState, useEffect } from "react";
 import Timeline from "@/components/Timeline";
 
-export default function Home({ language }) {
+export default function Home({ language, scrollPosition }) {
   const [viewportWidth, setViewportWidth] = useState("");
   const [viewportHeight, setViewportHeight] = useState("");
   const [timeLineDates, setTimeLineDates] = useState([]);
@@ -40,7 +40,10 @@ export default function Home({ language }) {
       <TitleTimelineContainer isOnMobile={viewportHeight > viewportWidth}>
         <PageTitle>Chronic</PageTitle>
         {viewportHeight < viewportWidth && (
-          <Timeline timeLineDates={timeLineDates} />
+          <Timeline
+            timeLineDates={timeLineDates}
+            scrollPosition={scrollPosition}
+          />
         )}
       </TitleTimelineContainer>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>

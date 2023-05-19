@@ -1,27 +1,6 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-export default function Timeline({ timeLineDates }) {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  function handleScroll() {
-    if (typeof window !== "undefined") {
-      let currentPosition = window.scrollY;
-      let clientHeightOnePercent =
-        (document.body.clientHeight - window.innerHeight) / 100;
-      setScrollPosition(currentPosition / clientHeightOnePercent + "%");
-    }
-  }
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [scrollPosition]);
-
+export default function Timeline({ timeLineDates, scrollPosition }) {
   return (
     <TimelineContainer>
       <ProgressBar scrollPosition={scrollPosition} />
@@ -44,7 +23,7 @@ const TimelineContainer = styled.aside.attrs((props) => ({
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 10% 0 10%;
+  margin: 10% 0 20%;
   padding-right: 20%;
   height: 100%;
   &:before {
@@ -75,24 +54,11 @@ const ProgressBar = styled.div.attrs((props) => ({
 const DateOnTimeLine = styled.a`
   position: relative;
   background: none;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--primary-accent);
   opacity: 0.6;
   &:hover {
     opacity: 1;
     color: white;
-    &:after {
-      background-color: white;
-    }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    margin-left: 5px;
-    background-color: var(--primary-accent);
-    opacity: 0.6;
-    width: 15px;
-    height: 2px;
   }
 `;

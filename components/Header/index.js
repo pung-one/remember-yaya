@@ -6,6 +6,7 @@ import { SlMenu, SlClose } from "react-icons/sl";
 import DesktopNavBar from "../DesktopNavBar";
 
 export default function Header({
+  showHeader,
   language,
   onToggleLanguage,
   onToggleNav,
@@ -29,7 +30,10 @@ export default function Header({
   }, []);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      showHeader={showHeader}
+      isOnMobile={viewportHeight > viewportWidth}
+    >
       <StyledLink href={"/"}>
         <Headline>Remember Yaya</Headline>
       </StyledLink>
@@ -58,6 +62,8 @@ export default function Header({
 
 const HeaderContainer = styled.header`
   position: fixed;
+  top: ${({ showHeader, isOnMobile }) =>
+    !showHeader && isOnMobile ? "-10vh" : "0"};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,6 +72,7 @@ const HeaderContainer = styled.header`
   background-color: black;
   width: 100%;
   height: 10vh;
+  transition: top 0.5s;
 `;
 
 const StyledLink = styled(Link)`

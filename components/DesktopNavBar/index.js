@@ -31,12 +31,10 @@ export default function DesktopNavBar() {
 }
 
 const NavContainer = styled.nav`
-  position: relative;
   background-color: black;
 `;
 
 const List = styled.ul`
-  position: relative;
   display: flex;
   align-items: center;
   list-style: none;
@@ -45,6 +43,7 @@ const List = styled.ul`
 `;
 
 const ListElement = styled.li`
+  position: relative;
   display: flex;
   align-items: center;
 `;
@@ -57,7 +56,7 @@ const StyledLink = styled(Link)`
   &:hover {
     color: var(--accent);
   }
-  transition: all 0.2s;
+  transition: all 0.3s;
   &:after {
     content: "";
     position: absolute;
