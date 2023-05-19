@@ -32,7 +32,6 @@ export default function DesktopNavBar() {
 
 const NavContainer = styled.nav`
   position: relative;
-  margin: 0 auto 0 auto;
   background-color: black;
 `;
 
@@ -46,11 +45,11 @@ const List = styled.ul`
 `;
 
 const ListElement = styled.li`
-  background-color: black;
+  display: flex;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
-  position: relative;
   background-color: black;
   color: var(--secondary);
   font-family: var(--headline-font);
@@ -69,7 +68,7 @@ const StyledLink = styled(Link)`
     bottom: 0;
     left: 0;
     background-color: var(--accent);
-    transition: transform 0.25s ease-out;
+    transition: transform 0.2s ease-out;
   }
   &:hover:after {
     transform: scaleX(1);

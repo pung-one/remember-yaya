@@ -45,7 +45,7 @@ const TimelineContainer = styled.aside.attrs((props) => ({
   justify-content: space-between;
   align-items: flex-end;
   margin: 10% 0 10%;
-  padding-right: 15%;
+  padding-right: 20%;
   height: 100%;
   &:before {
     content: "";
@@ -68,17 +68,31 @@ const ProgressBar = styled.div.attrs((props) => ({
   width: 5px;
   top: 0;
   right: 10%;
-  background-color: var(--primary-accent);
+  background-color: white;
   opacity: 1;
 `;
 
 const DateOnTimeLine = styled.a`
   position: relative;
   background: none;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--primary-accent);
   opacity: 0.6;
   &:hover {
+    opacity: 1;
     color: white;
+    &:after {
+      background-color: white;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-left: 5px;
+    background-color: var(--primary-accent);
+    opacity: 0.6;
+    width: 15px;
+    height: 2px;
   }
 `;

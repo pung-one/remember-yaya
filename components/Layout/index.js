@@ -61,7 +61,7 @@ const LayoutContainer = styled.section`
 `;
 
 const CloseOnClickArea = styled.section`
-  position: absolute;
+  position: fixed;
   top: 10vh;
   width: 38vw;
   height: 90vh;
