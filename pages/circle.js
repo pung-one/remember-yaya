@@ -106,7 +106,7 @@ export default function Circle({ language }) {
             <Caption>
               {language === "english"
                 ? "The Yaya-Jabbi-Circle on February 19, 2023"
-                : "Der Yaya-Jabbi-Circle am 19. February 2023"}
+                : "Der Yaya-Jabbi-Circle am 19. Februar 2023"}
             </Caption>
           </ImageContainer>
         </Article>

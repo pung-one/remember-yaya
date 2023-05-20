@@ -46,6 +46,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Head>
         <title>Remember Yaya</title>
+        <link rel="icon" href="/favicon/raise-hand.ico" />
         <meta
           name="description"
           content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
