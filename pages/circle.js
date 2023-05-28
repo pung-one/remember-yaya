@@ -3,25 +3,9 @@ import { css } from "styled-components";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import PageContainer from "@/components/PageContainer";
 
-export default function Circle({ language }) {
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
+export default function Circle({ language, viewportHeight, viewportWidth }) {
   return (
     <>
       <PageTitle isOnMobile={viewportHeight > viewportWidth}>Circle</PageTitle>
@@ -134,21 +118,13 @@ const PageTitle = styled.h1`
         `}
 `;
 
-const PageContainer = styled.main`
-  background: none;
-  position: relative;
-  max-width: 1100px;
-  margin: ${({ isOnMobile }) =>
-    isOnMobile ? "5vh 0 10vh" : "25vh auto 10vh auto"};
-`;
-
 const Article = styled.article`
   background: none;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 20vw 30px 5vw")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 10vw 30px 2.5vw")};
 `;
 
 const Title = styled.h2`

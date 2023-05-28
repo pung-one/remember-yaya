@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function BlogPost({
@@ -12,24 +11,9 @@ export default function BlogPost({
   imageAlt,
   article,
   youtubeLink,
+  viewportHeight,
+  viewportWidth,
 }) {
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
   return (
     <PostContainer id={slug} isOnMobile={viewportHeight > viewportWidth}>
       {isDetailPost ? (
@@ -109,7 +93,7 @@ const PostContainer = styled.section`
   flex-direction: column;
   padding: ${({ isOnMobile }) => (isOnMobile ? "0 0 10vh" : "15vh 0 0")};
   margin: ${({ isOnMobile }) =>
-    isOnMobile ? "0 10vw 10vh" : "0 20vw 10vh 5vw"};
+    isOnMobile ? "0 10vw 10vh" : "0 10vw 10vh 2.5vw"};
   gap: 40px;
   background: none;
   > * {

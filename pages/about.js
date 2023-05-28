@@ -3,24 +3,9 @@ import { css } from "styled-components";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import PageContainer from "@/components/PageContainer";
 
-export default function About({ language }) {
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+export default function About({ language, viewportHeight, viewportWidth }) {
   return (
     <>
       <PageTitle isOnMobile={viewportHeight > viewportWidth}>About</PageTitle>
@@ -134,20 +119,13 @@ const PageTitle = styled.h1`
         `}
 `;
 
-const PageContainer = styled.main`
-  background: none;
-  position: relative;
-  max-width: 1100px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "5vh 0" : "25vh auto 0 auto")};
-`;
-
 const Article = styled.article`
   background: none;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 20vw 30px 5vw")};
+  margin: ${({ isOnMobile }) => (isOnMobile ? "0 10vw" : "0 10vw 30px 2.5vw")};
 `;
 
 const Title = styled.h2`

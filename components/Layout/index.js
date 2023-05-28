@@ -9,10 +9,10 @@ export default function Layout({
   language,
   onToggleLanguage,
   showHeader,
+  viewportHeight,
+  viewportWidth,
 }) {
   const [showNav, setShowNav] = useState(false);
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
 
   const router = useRouter();
   const route = router.route;
@@ -21,27 +21,15 @@ export default function Layout({
     setShowNav(!showNav);
   }
 
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
   useEffect(() => {
     setShowNav(false);
   }, [route]);
 
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
   return (
     <LayoutContainer>
       <Header
+        viewportHeight={viewportHeight}
+        viewportWidth={viewportWidth}
         showHeader={showHeader}
         language={language}
         onToggleLanguage={onToggleLanguage}
