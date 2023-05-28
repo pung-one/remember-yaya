@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { SlMenu, SlClose } from "react-icons/sl";
 import DesktopNavBar from "../DesktopNavBar";
 
@@ -11,24 +10,9 @@ export default function Header({
   onToggleLanguage,
   onToggleNav,
   showNav,
+  viewportHeight,
+  viewportWidth,
 }) {
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
   return (
     <HeaderContainer
       showHeader={showHeader}

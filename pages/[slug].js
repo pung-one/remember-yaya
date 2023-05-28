@@ -5,26 +5,14 @@ import { css } from "styled-components";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-export default function PostDetail({ language }) {
+export default function PostDetail({
+  language,
+  viewportHeight,
+  viewportWidth,
+}) {
   const router = useRouter();
   const { slug } = router.query;
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
   const [currentPost, setCurrentPost] = useState({});
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
 
   useEffect(() => {
     setCurrentPost(oldPosts.find((post) => post.slug === slug));
@@ -51,6 +39,8 @@ export default function PostDetail({ language }) {
       </PageTitle>
       <PageContainer isOnMobile={viewportHeight > viewportWidth}>
         <BlogPost
+          viewportHeight={viewportHeight}
+          viewportWidth={viewportWidth}
           imageAlt={imageAlt}
           isDetailPost={true}
           key={engTitle}

@@ -8,6 +8,8 @@ export default function App({ Component, pageProps }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState("");
+  const [viewportHeight, setViewportHeight] = useState("");
 
   function handleToggleLanguage() {
     if (language === "english") {
@@ -32,6 +34,11 @@ export default function App({ Component, pageProps }) {
     }
   }
 
+  function handleResize() {
+    setViewportWidth(window.innerWidth);
+    setViewportHeight(window.innerHeight);
+  }
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
@@ -40,6 +47,15 @@ export default function App({ Component, pageProps }) {
       };
     }
   }, [scrollPosition, lastScrollY]);
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   return (
     <>
@@ -53,11 +69,15 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Layout
+        viewportHeight={viewportHeight}
+        viewportWidth={viewportWidth}
         showHeader={showHeader}
         language={language}
         onToggleLanguage={handleToggleLanguage}
       >
         <Component
+          viewportHeight={viewportHeight}
+          viewportWidth={viewportWidth}
           {...pageProps}
           language={language}
           scrollPosition={scrollPosition}

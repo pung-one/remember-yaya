@@ -5,24 +5,13 @@ import { css } from "styled-components";
 import { useState, useEffect } from "react";
 import Timeline from "@/components/Timeline";
 
-export default function Home({ language, scrollPosition }) {
-  const [viewportWidth, setViewportWidth] = useState("");
-  const [viewportHeight, setViewportHeight] = useState("");
+export default function Home({
+  language,
+  scrollPosition,
+  viewportWidth,
+  viewportHeight,
+}) {
   const [timeLineDates, setTimeLineDates] = useState([]);
-
-  function handleResize() {
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setViewportWidth(window.innerWidth);
-      setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
 
   useEffect(() => {
     setTimeLineDates(
@@ -62,6 +51,8 @@ export default function Home({ language, scrollPosition }) {
           }) => {
             return (
               <BlogPost
+                viewportHeight={viewportHeight}
+                viewportWidth={viewportWidth}
                 slug={slug}
                 key={engTitle}
                 title={language === "english" ? engTitle : gerTitle}
