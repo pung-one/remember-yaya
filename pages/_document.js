@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Remember Yaya</title>
+          <title>Remember Yaya Jabbi</title>
           <meta
             name="description"
             content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
