@@ -26,13 +26,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Remember Yaya Jabbi</title>
-          <meta
-            name="description"
-            content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

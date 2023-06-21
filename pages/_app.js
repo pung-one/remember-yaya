@@ -63,6 +63,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Remember Yaya Jabbi</title>
         <link rel="icon" href="/favicon/raise-hand.ico" />
+        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
