@@ -61,11 +61,22 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Head>
-        <title>Remember Yaya</title>
+        <title>Remember Yaya Jabbi</title>
         <link rel="icon" href="/favicon/raise-hand.ico" />
+        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
+          key="desc"
+        />
+        <meta property="og:title" content="Remember Yaya Jabbi" />
+        <meta
+          property="og:description"
+          content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
+        />
+        <meta
+          property="og:image"
+          content="https://www.rememberyaya.org/_next/image?url=%2Fimages%2FYaya_Jabbi.jpg&w=1920&q=75"
         />
       </Head>
       <Layout
