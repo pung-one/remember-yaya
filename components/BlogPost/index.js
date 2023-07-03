@@ -47,9 +47,9 @@ export default function BlogPost({
         <>
           <YoutubeContainer isOnMobile={viewportHeight > viewportWidth}>
             <StyledIframe
-              src="https://www.youtube.com/embed/WsTrfJTC9Ms"
+              src={`https://www.youtube.com/embed/${youtubeLink}`}
               allowFullScreen
-              title="The Life of Yaya Jabbi"
+              title={title}
             />
           </YoutubeContainer>
           <Article

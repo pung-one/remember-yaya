@@ -1,5 +1,18 @@
 const oldPosts = [
   {
+    slug: "abolition-conference",
+    gerTitle: "Abolitionismus Konferenz",
+    engTitle: "Abolition Conference",
+    gerDate: "23./24. Juni 2023",
+    engDate: "June 23/24, 2023",
+    gerArticle:
+      "Unter dem Titel <b>'Racial Capitalism | Krisen | Abolition'</b> fand am Wochenende des 23. und 25. Juni im Kampnagel Theater in Hamburg eine Bewegungskonferenz statt. Die mehrtägige Veranstaltung diente dem Austausch und der Vernetzung aller, die gegen Polizeigewalt und Inhaftierung, Grenzen und Abschottung, patriarchale Gewalt und ökologische Zerstörung, Ausbeutung und die zunehmende Produktion von Menschen als “überflüssig” – kurz: racial capitalism – kämpfen. Die Konferenz zielte darauf ab, die Analyse und Kritik des racial capitalism und seiner verschiedenen Facetten, Spezifika und globalen Artikulationen im deutschen Kontext weiter zu verankern und produktive Gespräche und Solidaritäten zwischen lokalen Bewegungen und globalen Kämpfen für andere Welten zu stärken. <br /> Auch die Initiative in Gedenken an Yaya Jabbi war eingeladen. Im <b>Videomitschnitt</b> sind die Reden und Podiumsdiskussionen nachträglich anzuschauen. <br /><br /> Außerdem gibt es weitere Infos <a target=”_blank” href='http://abolitionismus.org/'>hier</a>.",
+    engArticle:
+      "Under the title <b>'Racial Capitalism | Crises | Abolition'</b>, a movement conference took place on the weekend of June 23 - 25 at Kampnagel Theater in Hamburg. The 2-days-event, served the exchange and networking of all those who struggle against police violence and imprisonment, borders and closure, patriarchal violence and ecological destruction, exploitation and the increasing production of people as “unnecessary“ - in short: racial capitalism. The conference aimed to further anchor the analysis and critique of racial capitalism and its various facets, specificities and global articulations in the German context and to strengthen productive conversations and solidarities between local movements and global struggles for other worlds.<br /> The Initiative in Remembrance of Yaya Jabbi was also invited. You can watch the speeches and panel discussions in the <b>video recording</b>. <br /><br /> Also, more information is available <a target=”_blank” href='http://abolitionismus.org/'>here</a>.",
+    imagesrc: "",
+    youtubeLink: "d6FZa-yEtak",
+  },
+  {
     slug: "the-life-of-yaya-jabbi",
     gerTitle: "The Life of Yaya Jabbi",
     engTitle: "The Life of Yaya Jabbi",
