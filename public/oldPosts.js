@@ -10,7 +10,7 @@ const oldPosts = [
     engArticle:
       "Under the title <b>'Racial Capitalism | Crises | Abolition'</b>, a movement conference took place on the weekend of June 23 - 25 at Kampnagel Theater in Hamburg. The 2-days-event, served the exchange and networking of all those who struggle against police violence and imprisonment, borders and closure, patriarchal violence and ecological destruction, exploitation and the increasing production of people as “unnecessary“ - in short: racial capitalism. The conference aimed to further anchor the analysis and critique of racial capitalism and its various facets, specificities and global articulations in the German context and to strengthen productive conversations and solidarities between local movements and global struggles for other worlds.<br /> The Initiative in Remembrance of Yaya Jabbi was also invited. You can watch the speeches and panel discussions in the <b>video recording</b>. <br /><br /> Also, more information is available <a target=”_blank” href='http://abolitionismus.org/'>here</a>.",
     imagesrc: "",
-    youtubeLink: "d6FZa-yEtak",
+    youtubeLink: "HDiNgi-Qj_8",
   },
   {
     slug: "the-life-of-yaya-jabbi",
