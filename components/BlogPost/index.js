@@ -18,7 +18,7 @@ export default function BlogPost({
     <PostContainer id={slug} isOnMobile={viewportHeight > viewportWidth}>
       {isDetailPost ? (
         <Title
-          dateIsShownOutside={
+          $dateIsShownOutside={
             viewportWidth > 1200 && viewportHeight < viewportWidth
           }
         >
@@ -36,7 +36,7 @@ export default function BlogPost({
       )}
       {!isDetailPost && (
         <Date
-          showOutsideOfBox={
+          $showOutsideOfBox={
             viewportWidth > 1200 && viewportHeight < viewportWidth
           }
         >
@@ -117,16 +117,16 @@ const LinkTitle = styled(Link)`
 
 const Title = styled.h2`
   background: none;
-  margin-bottom: ${({ dateIsShownOutside }) =>
-    dateIsShownOutside ? "3vh" : ""};
+  margin-bottom: ${({ $dateIsShownOutside }) =>
+    $dateIsShownOutside ? "3vh" : ""};
 `;
 
 const Date = styled.span`
   background: none;
   font-size: 14px;
-  position: ${({ showOutsideOfBox }) =>
-    showOutsideOfBox ? "absolute" : "relative"};
-  left: ${({ showOutsideOfBox }) => (showOutsideOfBox ? "-12vw" : "")};
+  position: ${({ $showOutsideOfBox }) =>
+    $showOutsideOfBox ? "absolute" : "relative"};
+  left: ${({ $showOutsideOfBox }) => ($showOutsideOfBox ? "-12vw" : "")};
   opacity: 0.7;
 `;
 

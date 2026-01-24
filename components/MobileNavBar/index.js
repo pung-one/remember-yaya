@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 export default function MobileNavBar({ showNav }) {
   return (
-    <NavContainer showNav={showNav}>
+    <NavContainer $showNav={showNav}>
       <List>
         <ListElement>
           <StyledLink aria-label="got to chronic-page" href={"/"}>
@@ -38,7 +38,7 @@ const NavContainer = styled.nav`
   height: 100%;
   opacity: 0.85;
   background-color: black;
-  right: ${({ showNav }) => (showNav ? "0" : "-100vw")};
+  right: ${({ $showNav }) => ($showNav ? "0" : "-100vw")};
   transition: all 0.5s ease-in-out;
 `;
 

@@ -15,8 +15,8 @@ export default function Header({
 }) {
   return (
     <HeaderContainer
-      showHeader={showHeader}
-      isOnMobile={viewportHeight > viewportWidth}
+      $showHeader={showHeader}
+      $isOnMobile={viewportHeight > viewportWidth}
     >
       <StyledLink href={"/"}>
         <Headline>Remember Yaya</Headline>
@@ -27,8 +27,8 @@ export default function Header({
           aria-label="switch between english and german language"
           onClick={() => onToggleLanguage()}
         >
-          <LangSign isActive={language === "english"}>ENG</LangSign>{" "}
-          <LangSign isActive={language === "german"}>DEU</LangSign>
+          <LangSign $isActive={language === "english"}>ENG</LangSign>{" "}
+          <LangSign $isActive={language === "german"}>DEU</LangSign>
         </LanguageButton>
         {viewportHeight > viewportWidth && (
           <MenuButton
@@ -46,8 +46,8 @@ export default function Header({
 
 const HeaderContainer = styled.header`
   position: fixed;
-  top: ${({ showHeader, isOnMobile }) =>
-    !showHeader && isOnMobile ? "-10vh" : "0"};
+  top: ${({ $showHeader, $isOnMobile }) =>
+    !$showHeader && $isOnMobile ? "-10vh" : "0"};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,9 +93,9 @@ const LangSign = styled.span`
   font-size: 2vh;
   background-color: black;
   color: var(--secondary);
-  opacity: ${({ isActive }) => (isActive ? "0.5" : "1")};
-  ${({ isActive }) =>
-    !isActive
+  opacity: ${({ $isActive }) => ($isActive ? "0.5" : "1")};
+  ${({ $isActive }) =>
+    !$isActive
       ? css`
           &:hover {
             cursor: pointer;
