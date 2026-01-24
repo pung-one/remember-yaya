@@ -74,9 +74,20 @@ export default function App({ Component, pageProps }) {
           property="og:description"
           content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.rememberyaya.org/" />
+
         <meta
           property="og:image"
           content="https://www.rememberyaya.org/_next/image?url=%2Fimages%2FYaya_Jabbi.jpg&w=1920&q=75"
+        />
+
+        <link rel="canonical" href="https://www.rememberyaya.org/" />
+
+        <meta name="twitter:title" content="St. Kindelein" />
+        <meta
+          name="twitter:description"
+          content="This website informs about the activity of the 'Initiative in Remembrance of Yaya Jabbi'."
         />
       </Head>
       <Layout
